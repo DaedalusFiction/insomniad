@@ -14,7 +14,7 @@ import lightTheme from "./styles/themes/theme";
 
 // 1. Meta
 
-const siteName = "SICKTOOTH";
+const siteName = "THE INSOMNIAD";
 // const siteName = "Cosima Hewes";
 
 // 2. Layout
@@ -375,12 +375,12 @@ const galleryConfig = {
 };
 
 const subscribeConfig = {
-    website: "SICKTOOTH",
+    website: "INSOMNIAD",
     category: "contact",
     fields: [{ name: "Email", type: "text", value: "" }],
 };
 const contactConfig = {
-    website: "SICKTOOTH",
+    website: "INSOMNIAD",
     category: "contact",
     fields: [
         { name: "Name", type: "text", value: "" },
@@ -411,8 +411,7 @@ const aboutContent = {
             variant: "contained",
         },
     ],
-    content:
-        "SICKTOOTH was founded in 2022 by failed novelist David Sorensen, who decided that he could do more good in this world by creating a platform on which to publish other writers than he ever could by simply writing things himself. \n\nPublishing fiction, poetry, creative non-fiction, and art, SICKTOOTH strives to publish the best content we can find, particulary that by previously unpublished artists and writers. \n\nThe name SICKTOOTH doesn't really have any particular significance; we just thought it sounded cool. Oh, and on that point, we think semicolons are just fine (when used in moderation).",
+    content: "The Insomniad is a literary journal founded in 2022.",
 };
 
 const leadProfile = {
@@ -428,21 +427,24 @@ const leadProfile = {
 const secondaryProfiles = [
     {
         image: { url: "/images/placeholder.webp", alt: "alt placeholder text" },
-        name: "Designer One",
+        name: "James Cole",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit.\n\nQuibusdam eaque nihil ipsum molestias ab quod aliquid consectetur rerum facilis ratione dignissimos fugiat, enim doloribus assumenda.\n\nLaboriosam voluptatem laudantium sequi iste nihil cupiditate sed, corporis eum natus excepturi, inventore nulla unde! Veritatis nihil culpa neque.",
     },
     {
-        image: { url: "/images/placeholder.webp", alt: "alt placeholder text" },
-        name: "Designer Two",
+        image: {
+            url: "/images/profile1.webp",
+            alt: "Self-Portrait, by Henri Fantin-Latour",
+        },
+        name: "David Sorensen",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam eaque nihil ipsum molestias ab quod aliquid consectetur rerum facilis ratione dignissimos fugiat, enim doloribus assumenda.\n\nLaboriosam voluptatem laudantium sequi iste nihil cupiditate sed, corporis eum natus excepturi, inventore nulla unde! Veritatis nihil culpa neque. Dolore ipsa sed asperiores voluptatibus nam modi. Dolorem hic incidunt quae tenetur quaerat animi, unde aspernatur.",
+            "David Sorensen is a writer, musician, and web developer living in central Virginia. His stories have appeared in a number of literary magazines, including New Reader Magazine, The Squawk Back, Infinite Rust, and, depending on how gullible you are, Harper's and The New Yorker. His upcoming novel, Unconventional Desire, will probably never actually be released or even finished. \n\nFor anyone who is interested, David's favorite writers include David Foster Wallace, Dave Eggers, Douglas Coupland, Kurt Vonnegut, Thomas Mann, T.S. Eliot, and Albert Camus. He also likes trashy memoirs, by anyone.",
     },
     {
         image: { url: "/images/placeholder.webp", alt: "alt placeholder text" },
-        name: "Designer Three",
+        name: "Chandler McGraw",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam eaque nihil ipsum molestias ab quod aliquid consectetur rerum facilis ratione dignissimos fugiat, enim doloribus assumenda.\n\nLaboriosam voluptatem laudantium sequi iste nihil cupiditate sed, corporis eum natus excepturi, inventore nulla unde! Veritatis nihil culpa neque. Dolore ipsa sed asperiores voluptatibus nam modi. Dolorem hic incidunt quae tenetur quaerat animi, unde aspernatur.\n\nDolore ipsa sed asperiores voluptatibus nam modi.",
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam eaque nihil ipsum molestias ab quod aliquid consectetur rerum facilis ratione dignissimos fugiat, enim doloribus assumenda.\n\nLaboriosam voluptatem laudantium sequi iste nihil cupiditate sed, corporis eum natus excepturi, inventore nulla unde! Veritatis nihil culpa neque. Dolore ipsa sed asperiores voluptatibus nam modi. Dolorem hic incidunt quae tenetur quaerat animi, unde aspernatur.",
     },
 ];
 
@@ -459,8 +461,7 @@ const studioContent = {
         alt: "alt placeholder text",
     },
     header: "This is what we believe",
-    content:
-        "Literature can be a lot of things, but in terms of what it should be, we believe that there is only one: entertaining. Your time is valuable, and there is an incredible amount of literature out there, so to create something entertaining is in that sense a sign of courtesy and respect. We respect you, reader, and we are grateful for your decision to read SICKTOOTH, and to honor that we will do our best to keep you interested. \n\nLiterature as art, though, has a few additional responsibilities. These of course will change, and should change, but as far as SICKTOOTH is concerned, we aim to publish poetry, fiction, creative non-fiction, and art that connects people to one another as well as furthers people's knowledge of themselves. After all, what is a story but a chance to walk in someone else's shoes, and what is a poem but a fresh perspective on the familiar? \n\nAnd beyond all this, we want to support artists and writers. The future of SICKTOOTH depends on them, as does that of the human race.",
+    content: "This is where we will talk about our philosophy of fiction etc.",
 };
 
 // 7c. Work

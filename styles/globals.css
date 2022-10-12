@@ -34,8 +34,9 @@ a {
 }
 
 .link-image:hover {
-    transition: 600ms;
-    filter: hue-rotate(90deg);
+    transition: 300ms;
+    filter: grayscale(100%);
+    transform: scale(0.99);
 }
 
 .nav-link {

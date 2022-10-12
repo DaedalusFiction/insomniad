@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import SizedImage from "../../../components/general/SizedImage";
 import { leadProfile, secondaryProfiles } from "../../../siteInfo";
@@ -11,7 +11,7 @@ const index = () => {
             <AboutNavbar />
             <Box className="section">
                 <Grid container spacing={6}>
-                    <Grid item xs={12} md={6}>
+                    {/* <Grid item xs={12} md={6}>
                         <SizedImage
                             height="30rem"
                             width="100%"
@@ -27,28 +27,36 @@ const index = () => {
                         <Typography sx={{ whiteSpace: "pre-wrap" }}>
                             {leadProfile.content}
                         </Typography>
-                    </Grid>
-                    {/* {secondaryProfiles.map((profile, index) => {
+                    </Grid> */}
+                    {secondaryProfiles.map((profile, index) => {
                         return (
                             <Grid item key={index} xs={12} md={4}>
-                                <Box sx={{ marginTop: "4rem" }}>
+                                <Box>
                                     <SizedImage
                                         image={profile.image}
                                         height="25rem"
                                         width="100%"
                                     />
                                     <br />
-                                    <Typography variant="h4">
+                                    <Typography
+                                        variant="h4"
+                                        sx={{ textAlign: "center" }}
+                                    >
                                         {profile.name}
                                     </Typography>
-                                    <br />
+                                    <Divider
+                                        sx={{
+                                            maxWidth: "10rem",
+                                            margin: "0 auto 1rem auto",
+                                        }}
+                                    />
                                     <Typography sx={{ whiteSpace: "pre-wrap" }}>
                                         {profile.content}
                                     </Typography>
                                 </Box>
                             </Grid>
                         );
-                    })} */}
+                    })}
                 </Grid>
             </Box>
         </PageLayout>

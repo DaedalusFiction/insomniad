@@ -178,7 +178,7 @@ const Navbar = () => {
                     {/* desktop view */}
                     <Box sx={{ display: { xs: "none", xl: "inherit" } }}>
                         <Grid container>
-                            <Grid item xs>
+                            <Grid item xs xl={3.75}>
                                 <Box
                                     sx={{
                                         display: "flex",

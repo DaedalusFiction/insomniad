@@ -14,7 +14,7 @@ import lightTheme from "./styles/themes/theme";
 
 // 1. Meta
 
-const siteName = "THE INSOMNIAD";
+const siteName = "THE RUMEN";
 // const siteName = "Cosima Hewes";
 
 // 2. Layout
@@ -395,8 +395,9 @@ const contactConfig = {
 
 const aboutContent = {
     image: {
-        url: "/images/about1.webp",
-        alt: "Moses Striking the Rock, by Joachim Anthonisz Wetwael",
+        url: "/images/about2.webp",
+        alt: "Prize Bull, by H. Call (1876)",
+        // alt: "Moses Striking the Rock, by Joachim Anthonisz Wetwael",
     },
     name: "OUR ROOTS",
     buttons: [
@@ -453,7 +454,8 @@ const secondaryProfiles = [
 const studioContent = {
     imageOne: {
         url: "/images/missionStatement.webp",
-        alt: "Venus Adorned by the Graces, by Annibale Carracci",
+        alt: "A Young Bull, by John Woodhouse Audubon (1849)",
+        // alt: "Venus Adorned by the Graces, by Annibale Carracci",
     },
     imageTwo: { url: "/images/placeholder.webp", alt: "alt placeholder text" },
     imageThree: {

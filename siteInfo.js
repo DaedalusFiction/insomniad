@@ -14,7 +14,7 @@ import lightTheme from "./styles/themes/theme";
 
 // 1. Meta
 
-const siteName = "THE RUMEN";
+const siteName = "The Rumen";
 // const siteName = "Cosima Hewes";
 
 // 2. Layout

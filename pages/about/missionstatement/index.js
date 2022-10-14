@@ -16,6 +16,15 @@ const index = () => {
             <Box className="section">
                 <Grid container spacing={6}>
                     <Grid item xs={12} md={6}>
+                        <Typography variant="h3">
+                            {studioContent.header}
+                        </Typography>
+                        <br />
+                        <Typography sx={{ whiteSpace: "pre-wrap" }}>
+                            {studioContent.content}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
                         <SizedImage
                             height="30rem"
                             width="100%"
@@ -23,15 +32,6 @@ const index = () => {
                         />
                         <Typography variant="caption">
                             {studioContent.imageOne.alt}
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="h3">
-                            {studioContent.header}
-                        </Typography>
-                        <br />
-                        <Typography sx={{ whiteSpace: "pre-wrap" }}>
-                            {studioContent.content}
                         </Typography>
                     </Grid>
                 </Grid>

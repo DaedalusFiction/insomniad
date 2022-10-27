@@ -7,7 +7,7 @@ import AboutNavbar from "../../components/about/AboutNavbar";
 
 const index = () => {
     return (
-        <PageLayout name="ABOUT">
+        <PageLayout name="ABOUT US">
             <AboutNavbar />
             <Box className="section">
                 <Grid container spacing={6}>
@@ -22,33 +22,18 @@ const index = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h3">
-                            {aboutContent.name}
+                        <Typography variant="h3">Our Roots</Typography>
+                        <br />
+                        <Typography>
+                            The Rumen was founded in 2022 by author and poet
+                            James Cole, writer and web developer David Sorensen,
+                            and visual artist Chandler McGraw.
                         </Typography>
                         <br />
-                        <Typography sx={{ whiteSpace: "pre-wrap" }}>
-                            {aboutContent.content}
+                        <Typography>
+                            There isn&rsquo;t much else to say besides that we
+                            hope you like what we&rsquo;re putting out there.
                         </Typography>
-                        {/* <Box
-                            sx={{
-                                display: "flex",
-                                gap: "1em",
-                                marginTop: "3rem",
-                            }}
-                        >
-                            {aboutContent.buttons.map((button, index) => {
-                                return (
-                                    <Link key={index} href={button.href}>
-                                        <Button
-                                            size="large"
-                                            variant="contained"
-                                        >
-                                            {button.text}
-                                        </Button>
-                                    </Link>
-                                );
-                            })}
-                        </Box> */}
                     </Grid>
                 </Grid>
             </Box>

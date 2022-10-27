@@ -430,7 +430,7 @@ const secondaryProfiles = [
         image: { url: "/images/placeholder.webp", alt: "alt placeholder text" },
         name: "James Cole",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit.\n\nQuibusdam eaque nihil ipsum molestias ab quod aliquid consectetur rerum facilis ratione dignissimos fugiat, enim doloribus assumenda.\n\nLaboriosam voluptatem laudantium sequi iste nihil cupiditate sed, corporis eum natus excepturi, inventore nulla unde! Veritatis nihil culpa neque.",
+            "James Cole is an author, poet, filmmaker, scientist, and ranidaphobe based out of Charlottesville, VA. He graduated from The College of William and Mary in 2018 with a degree in neuroscience and a bunch of unnecessary credits in creative writing and medieval studies. During the days he researches developmental eye disorders as Ph.D. candidate at the University of Virginia Medical School. By night, he blathers poetry at anyone who will listen, and many who will not. His own writings appear in a number of publications, including Oddball Magazine, Poetica Review, and The Artemis Journal. In 2019 he released his first poetry collection, Crow, come home with VerbalEyze Press. He also founded Charlottesville Poetry Critique Circle, Poetry Live! Showcase, and teaches poetics at WriterHouse. When he is not engaged in literary slapfighting he has been known to suffer horrific deaths in historic short films, simulate adventures with tiny plastic people, and clap way too loud for buskers. ",
     },
     {
         image: {

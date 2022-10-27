@@ -107,16 +107,16 @@ theme = createTheme(theme, {
             fontFamily: "Raleway",
             fontWeight: "400",
             fontSize: "1.25rem",
-            lineHeight: "1.25rem",
-            color: theme.palette.custom.primaryMuted,
+            // lineHeight: "1.25rem",
+            color: theme.palette.custom.dark,
             // fontFamily: darkTheme.typography.darkTheme.main,
         },
         body2: {
             fontFamily: "Raleway",
             fontWeight: "400",
             fontSize: "1.25rem",
-            lineHeight: "1.5rem",
-            color: theme.palette.custom.darkMuted,
+            // lineHeight: "1.5rem",
+            color: theme.palette.custom.dark,
             // fontFamily: darkTheme.typography.darkTheme.decorative,
         },
         caption: {
@@ -153,6 +153,16 @@ theme = createTheme(theme, {
                 root: {
                     // fontFamily: theme.typography.theme.accent,
                     color: theme.palette.secondary.main,
+                },
+            },
+        },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    // fontFamily: theme.typography.theme.accent,
+                    listStyleType: "disc",
+                    display: "list-item",
+                    marginLeft: "2rem",
                 },
             },
         },

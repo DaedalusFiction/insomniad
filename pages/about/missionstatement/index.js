@@ -30,9 +30,16 @@ const index = () => {
                             width="100%"
                             image={studioContent.imageOne}
                         />
-                        <Typography variant="caption">
-                            {studioContent.imageOne.alt}
-                        </Typography>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                justifyContent: { xs: "start", md: "end" },
+                            }}
+                        >
+                            <Typography variant="caption">
+                                {studioContent.imageOne.alt}
+                            </Typography>
+                        </Box>
                     </Grid>
                 </Grid>
             </Box>

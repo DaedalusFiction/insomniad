@@ -25,14 +25,28 @@ const index = () => {
                         <Typography variant="h3">Our Roots</Typography>
                         <br />
                         <Typography>
-                            The Rumen was founded in 2022 by author and poet
-                            James Cole, writer and web developer David Sorensen,
-                            and visual artist Chandler McGraw.
+                            The Rumen is a collaboration between writers, poets,
+                            and artists from a variety of demographics and
+                            backgrounds. Like the guts of an ungulate, we want
+                            The Rumen to be a space for ideas and experiences to
+                            digest, ferment, and transform. We are especially
+                            interested in publishing contributors from
+                            historically underrepresented people groups.
                         </Typography>
                         <br />
                         <Typography>
-                            There isn&rsquo;t much else to say besides that we
-                            hope you like what we&rsquo;re putting out there.
+                            Our editors bring their own expertise from artistic,
+                            scientific, and technical fields. No discipline
+                            exists in isolation, and we believe that in The
+                            Rumen the ripples of these intersections can gather,
+                            collapse, and mutate into some greater, more
+                            meaningful summation.
+                        </Typography>
+                        <br />
+                        <Typography>
+                            The Rumen was founded in 2022 by Dave Sorensen,
+                            James Cole, and Chandler McGraw, but made possible
+                            through the work of artists from across the globe.
                         </Typography>
                     </Grid>
                 </Grid>

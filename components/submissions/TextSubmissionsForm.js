@@ -147,7 +147,9 @@ const TextSubmissionsForm = ({ config, folder }) => {
                 borderRadius: "5px",
             }}
         >
-            <Typography variant="h3">Submit a story or poem.</Typography>
+            <Typography variant="h3">
+                Submit a story, article, or poem.
+            </Typography>
 
             <Box>
                 <Button

@@ -57,12 +57,12 @@ const index = () => {
                                 new meaning when thrust through the reticulum of
                                 the written word. We want humor, horror, strange
                                 fixations, canvases upended, bodies broken down
-                                cell by cell. Weknow, we know, there are plenty
+                                cell by cell. We know, we know, there are plenty
                                 of submission guidelines with similarly vague
                                 poetasting out there. The fact is we don&rsquo;t
                                 always know what we want until we see it, until
-                                we sit with it a while, ruminate on it if you
-                                will.
+                                we sit with it a while&mdash;ruminate on it, if
+                                you will.
                             </Typography>
                             <br />
                             <Typography
@@ -180,7 +180,7 @@ const index = () => {
                             <Typography>
                                 We love a good rhyme, but you should be
                                 confident in your use of meter/prosody. An off
-                                rhyme is far worse than no rhyme at all
+                                rhyme is far worse than no rhyme at all.
                             </Typography>
                             <br />
                             <Typography variant="h3" component="h3">
@@ -255,9 +255,9 @@ const index = () => {
                                     </ListItemText>
                                 </ListItem>
                             </List>
-                            <Typography variant="h4" component="h3">
-                                NON-FICTION
-                            </Typography>
+                            <br />
+                            <Typography variant="h3">NON-FICTION</Typography>
+                            <br />
                             <Typography>
                                 We especially love works dealing with the arts,
                                 history, philosophy, sciences, and anything that
@@ -326,6 +326,99 @@ const index = () => {
                                 capitalist, exploitative, imperialistic, and
                                 alt-right ideologies are not our cup of cud
                             </Typography>
+                            <br />
+
+                            <Typography variant="h3">VISUAL ART</Typography>
+                            <br />
+                            <Typography>
+                                The Rumen is seeking visual media that explores
+                                shifting perspectives and allows for multiple
+                                avenues of interpretation. We are especially
+                                drawn to the experimental and we would like to
+                                see pieces whose interpretations unfold with
+                                time. We do not equate craft with skill, and we
+                                prioritize works that can stand in dialogue with
+                                written pieces ready for publication.
+                            </Typography>
+                            <br />
+                            <Typography
+                                variant="h5"
+                                sx={{ fontWeight: "bold" }}
+                            >
+                                Visual Art Guidelines:
+                            </Typography>
+                            <List>
+                                <ListItem>
+                                    <ListItemText>
+                                        For all visual submissions we require an
+                                        accompanying artist statement of 100-200
+                                        words
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        For 2D art, submit an image (PNG 300ppi)
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        For 3D art, 3 photos for on-the-round, 5
+                                        for installation/environment (PNG
+                                        300ppi)
+                                    </ListItemText>
+                                </ListItem>
+                            </List>
+                            <br />
+
+                            <Typography
+                                variant="h5"
+                                sx={{ fontWeight: "bold" }}
+                            >
+                                We are not interested in:
+                            </Typography>
+                            <List>
+                                <ListItem>
+                                    <ListItemText>
+                                        Fan art or illustrations from other
+                                        media
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        Concept art for original characters or
+                                        setting
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        Erotica/Pornography
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        Nature/Landscape Photography that could
+                                        pass for stock images
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        AI Generated Art
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        Work otherwise unfit for a digital
+                                        format
+                                    </ListItemText>
+                                </ListItem>
+                            </List>
+                            <Typography>
+                                We aren&rsquo;t opposed to political diatribes
+                                but it should be noted that works advocating for
+                                capitalist, exploitative, imperialistic, and
+                                alt-right ideologies are not our cup of cud
+                            </Typography>
+
                             <br />
                             <Box
                                 sx={{

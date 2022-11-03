@@ -15,6 +15,7 @@ import { navigateToTop } from "../../utility/navigateToTop";
 import { pages, siteName, navbar } from "../../siteInfo";
 import SocialMediaIcons from "../general/SocialMediaIcons";
 import { useRouter } from "next/router";
+import NativeImage from "../../components/general/NativeImage";
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -89,7 +90,6 @@ const Navbar = () => {
                         <Grid item xs={3}>
                             <Box
                                 sx={{
-                                    flexGrow: 1,
                                     display: { xs: "flex", xl: "none" },
                                 }}
                             >
@@ -141,10 +141,10 @@ const Navbar = () => {
                                 </Menu>
                             </Box>
                         </Grid>
-                        <Grid item xs>
+                        <Grid item xs={9}>
                             <Box
                                 sx={{
-                                    display: "flex",
+                                    display: { xs: "flex", md: "none" },
                                     alignItems: "center",
                                     justifyContent: "center",
                                     height: "100%",
@@ -158,12 +158,9 @@ const Navbar = () => {
                                         navigateToTop();
                                     }}
                                     sx={{
-                                        display: { xs: "flex", xl: "none" },
                                         fontSize: "1.75rem",
-                                        textAlign: "center",
-                                        width: "100%",
+                                        textAlign: "end",
                                         fontWeight: 700,
-                                        transition: "1000ms",
                                         color: theme.palette.custom.light,
                                     }}
                                 >
@@ -178,103 +175,87 @@ const Navbar = () => {
                     {/* desktop view */}
                     <Box sx={{ display: { xs: "none", xl: "inherit" } }}>
                         <Grid container>
-                            <Grid item xs xl={3.75}>
+                            <Grid item xs={4}>
                                 <Box
                                     sx={{
                                         display: "flex",
                                         alignItems: "center",
                                         height: "100%",
+                                        gap: ".5rem",
                                     }}
                                 >
-                                    <Typography
-                                        // className="nav-link"
-                                        variant="h4"
-                                        onClick={() => {
-                                            navigateToTop();
-                                        }}
-                                        sx={{
-                                            margin: "0 1em",
-                                            transition: "300ms",
-                                            fontSize: titleFontSize,
-                                            textAlign: "center",
-                                            color:
-                                                currentPage === ""
-                                                    ? theme.palette.custom.light
-                                                    : theme.palette.custom
-                                                          .lightMuted,
-                                            "&:hover": {
-                                                color: theme.palette.custom
-                                                    .light,
-                                            },
-                                        }}
-                                    >
-                                        <Link href="/">{siteName}</Link>
-                                    </Typography>
+                                    {/* <Box sx={{ height: "100%" }}>
+                                        <NativeImage
+                                            image={navbar.image}
+                                            maxSize={85}
+                                        />
+                                    </Box> */}
+                                    <Link href="/">
+                                        <Typography
+                                            // className="nav-link"
+                                            variant="h3"
+                                            onClick={() => {
+                                                navigateToTop();
+                                            }}
+                                            sx={{
+                                                margin: "0",
+                                                transition: "300ms",
+                                                fontSize: titleFontSize,
+                                                textAlign: "center",
+                                                cursor: "pointer",
+                                                color:
+                                                    currentPage === ""
+                                                        ? theme.palette.custom
+                                                              .light
+                                                        : theme.palette.custom
+                                                              .lightMuted,
+                                                "&:hover": {
+                                                    color: theme.palette.custom
+                                                        .light,
+                                                },
+                                            }}
+                                        >
+                                            The Rumen
+                                        </Typography>
+                                    </Link>
                                 </Box>
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={8}>
                                 <Box
                                     sx={{
                                         display: "flex",
                                         alignItems: "center",
                                         width: "100%",
                                         height: "100%",
-                                        justifyContent: "center",
+                                        justifyContent: "end",
                                         gap: "1em",
                                     }}
                                 >
                                     {pages.map((page, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                display: "flex",
-                                                justifyContent: "center",
-                                            }}
-                                        >
-                                            <Link href={page.href}>
-                                                <Button
-                                                    onMouseEnter={
-                                                        handleMouseEnter
-                                                    }
-                                                    sx={{
-                                                        color: path.includes(
-                                                            page.name
-                                                                .split(" ")
-                                                                .join("")
-                                                        )
-                                                            ? theme.palette
-                                                                  .custom.light
-                                                            : theme.palette
-                                                                  .custom
-                                                                  .lightMuted,
-                                                        "&:hover": {
-                                                            color: theme.palette
-                                                                .custom.light,
-                                                        },
-                                                    }}
-                                                >
-                                                    {page.name}
-                                                </Button>
-                                            </Link>
-                                        </Box>
+                                        <Link key={index} href={page.href}>
+                                            <Button
+                                                onMouseEnter={handleMouseEnter}
+                                                sx={{
+                                                    color: path.includes(
+                                                        page.name
+                                                            .split(" ")
+                                                            .join("")
+                                                    )
+                                                        ? theme.palette.custom
+                                                              .light
+                                                        : theme.palette.custom
+                                                              .lightMuted,
+                                                    "&:hover": {
+                                                        color: theme.palette
+                                                            .custom.light,
+                                                    },
+                                                }}
+                                            >
+                                                {page.name}
+                                            </Button>
+                                        </Link>
                                     ))}
-                                </Box>
-                            </Grid>
-                            <Grid item xs>
-                                <Box
-                                    sx={{
-                                        display: "flex",
-                                        gap: "1em",
-                                        justifyContent: "end",
-                                        alignItems: "center",
-                                        width: "100%",
-                                        height: "100%",
-                                    }}
-                                >
-                                    <SocialMediaIcons
-                                        color="secondary"
-                                        fontSize="20px"
-                                    />
+
                                     <Link href={navbar.buttonOne.href}>
                                         <Button
                                             color="secondary"
@@ -296,8 +277,7 @@ const Navbar = () => {
                                             <Box
                                                 sx={{
                                                     display: "flex",
-                                                    justifyContent:
-                                                        "space-between",
+                                                    justifyContent: "end",
                                                     gap: "1em",
                                                     width: "100%",
                                                 }}

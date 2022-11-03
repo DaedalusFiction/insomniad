@@ -1,11 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { Container } from "@mui/system";
 import SizedImage from "../../../components/general/SizedImage";
-import {
-    leadProfile,
-    secondaryProfiles,
-    studioContent,
-} from "../../../siteInfo";
+import { studioContent } from "../../../siteInfo";
 import PageLayout from "../../../components/layout/PageLayout";
 import AboutNavbar from "../../../components/about/AboutNavbar";
 

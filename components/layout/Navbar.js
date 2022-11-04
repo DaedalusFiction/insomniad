@@ -130,7 +130,11 @@ const Navbar = () => {
                                                 }}
                                                 key={index}
                                             >
-                                                <Typography textAlign="center">
+                                                <Typography
+                                                    sx={{
+                                                        textAlign: "center",
+                                                    }}
+                                                >
                                                     <Link href={page.href}>
                                                         {page.name}
                                                     </Link>
@@ -162,6 +166,7 @@ const Navbar = () => {
                                         textAlign: "end",
                                         fontWeight: 700,
                                         color: theme.palette.custom.light,
+                                        fontFamily: "Birch",
                                     }}
                                 >
                                     <Link href="/" style={{ color: "inherit" }}>
@@ -198,11 +203,13 @@ const Navbar = () => {
                                                 navigateToTop();
                                             }}
                                             sx={{
-                                                margin: "0",
+                                                margin: ".25em 0",
                                                 transition: "300ms",
                                                 fontSize: titleFontSize,
                                                 textAlign: "center",
                                                 cursor: "pointer",
+                                                fontFamily: "Birch",
+                                                letterSpacing: ".2rem",
                                                 color:
                                                     currentPage === ""
                                                         ? theme.palette.custom

@@ -13,6 +13,16 @@
     src: url("/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
     font-weight: 1 999;
 }
+@font-face {
+    font-family: "Kumar One";
+    src: url("/fonts/KumarOne-Regular.ttf") format("truetype");
+    /* font-weight: 1 999; */
+}
+@font-face {
+    font-family: "Birch";
+    src: url("/fonts/BirchStd.otf") format("opentype");
+    /* font-weight: 1 999; */
+}
 
 .color-test {
     color: #f7d195;

@@ -4,20 +4,16 @@ let theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            // main: "#3B3B58",
-            // main: "#484041",
-            main: "#084C61",
-            // off: "#FBFFF1",
+            main: "#341a05", //Bistre
+            // main: "#084C61",
             off: "#DB504A",
         },
         secondary: {
-            // main: "#CBEAA6",
-            main: "#E3B505",
+            main: "#FFFBC3",
+            // main: "#E3B505",
         },
         background: {
-            // default: "#fefefe",
-            // default: "#FFEECF",
-            default: "#FBFBF2",
+            default: "#fefefe",
             accent: "#ffeccd",
             dark: "#ffeccd",
         },

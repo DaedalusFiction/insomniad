@@ -66,7 +66,7 @@ const Navbar = () => {
     };
 
     const handleMouseEnter = () => {
-        setExpanded(true);
+        setExpanded(false);
     };
 
     const handleMouseLeave = () => {
@@ -130,11 +130,7 @@ const Navbar = () => {
                                                 }}
                                                 key={index}
                                             >
-                                                <Typography
-                                                    sx={{
-                                                        textAlign: "center",
-                                                    }}
-                                                >
+                                                <Typography textAlign="center">
                                                     <Link href={page.href}>
                                                         {page.name}
                                                     </Link>
@@ -150,9 +146,10 @@ const Navbar = () => {
                                 sx={{
                                     display: { xs: "flex", md: "none" },
                                     alignItems: "center",
-                                    justifyContent: "center",
+                                    justifyContent: "end",
+                                    paddingRight: "1em",
                                     height: "100%",
-                                    width: "100%",
+                                    // width: "100%",
                                 }}
                             >
                                 <Typography
@@ -163,10 +160,8 @@ const Navbar = () => {
                                     }}
                                     sx={{
                                         fontSize: "1.75rem",
-                                        textAlign: "end",
                                         fontWeight: 700,
                                         color: theme.palette.custom.light,
-                                        fontFamily: "Birch",
                                     }}
                                 >
                                     <Link href="/" style={{ color: "inherit" }}>
@@ -203,13 +198,13 @@ const Navbar = () => {
                                                 navigateToTop();
                                             }}
                                             sx={{
-                                                margin: ".25em 0",
+                                                margin: "0",
                                                 transition: "300ms",
                                                 fontSize: titleFontSize,
+                                                fontFamily: "Birch",
+                                                letterSpacing: ".15em",
                                                 textAlign: "center",
                                                 cursor: "pointer",
-                                                fontFamily: "Birch",
-                                                letterSpacing: ".2rem",
                                                 color:
                                                     currentPage === ""
                                                         ? theme.palette.custom
@@ -222,7 +217,7 @@ const Navbar = () => {
                                                 },
                                             }}
                                         >
-                                            The Rumen
+                                            {siteName}
                                         </Typography>
                                     </Link>
                                 </Box>
@@ -284,7 +279,8 @@ const Navbar = () => {
                                             <Box
                                                 sx={{
                                                     display: "flex",
-                                                    justifyContent: "end",
+                                                    justifyContent:
+                                                        "space-between",
                                                     gap: "1em",
                                                     width: "100%",
                                                 }}

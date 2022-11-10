@@ -65,8 +65,8 @@ const ArticlePreview = ({ item, category, hideImage }) => {
                 >
                     {item.fields[2].value}
                 </Typography>
-                <Typography className="link" variant="h6">
-                    <Link href={authorHref}>{item.fields[1].value}</Link>
+                <Typography className="link" variant="h6" component="p">
+                    By <Link href={authorHref}>{item.fields[1].value}</Link>
                 </Typography>
             </Box>
             <Divider variant="inset" sx={{ margin: "1rem 0 1.5rem 0" }} />

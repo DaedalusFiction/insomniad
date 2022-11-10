@@ -83,12 +83,15 @@ const index = () => {
                                 artist he is experienced with copper and steel,
                                 among other mediums. His experimental style
                                 draws influence from the works of Lee Bontecou,
-                                Louise Nevelson, and John Baldasari. Outside his
-                                artistic efforts, Chandler is still seeking the
-                                Alf calendar with Melmackian anniversary gifts.
-                                He loves when tiny things are contained inside a
-                                larger version of themselves and frequently
-                                enjoys Twizzlers.
+                                Louise Nevelson, and John Baldasari.
+                            </Typography>
+                            <br />
+                            <Typography>
+                                Outside his artistic efforts, Chandler is still
+                                seeking the Alf calendar with Melmackian
+                                anniversary gifts. He loves when tiny things are
+                                contained inside a larger version of themselves
+                                and frequently enjoys Twizzlers.
                             </Typography>
                         </Profile>
                     </Grid>

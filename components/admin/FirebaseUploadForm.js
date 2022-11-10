@@ -274,7 +274,6 @@ const FirebaseUploadForm = ({
             <Box>
                 <Button
                     variant="outlined"
-                    color="secondary"
                     onClick={() => {
                         fileInputRef.current.children[0].click();
                         // fileInputRef.current.click();
@@ -300,7 +299,6 @@ const FirebaseUploadForm = ({
             <Box>
                 <Button
                     variant="outlined"
-                    color="secondary"
                     onClick={() => {
                         textFileInputRef.current.children[0].click();
                     }}
@@ -347,7 +345,6 @@ const FirebaseUploadForm = ({
                                     />
                                     <Button
                                         variant="outlined"
-                                        color="secondary"
                                         onClick={() => {
                                             handleRemovePreview(preview);
                                             handleRemoveSelectedImage(index);
@@ -366,7 +363,6 @@ const FirebaseUploadForm = ({
                     <TextField
                         InputLabelProps={{ shrink: true }}
                         type={field.type}
-                        color="secondary"
                         label={field.name}
                         key={index}
                         multiline={field.multiline}

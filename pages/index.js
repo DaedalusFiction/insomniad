@@ -15,12 +15,29 @@ import StoryPreview from "../components/home/StoryPreview";
 import ArticlePreview from "../components/home/ArticlePreview";
 import { db } from "../firebase";
 import Meta from "../components/home/Meta";
+import Link from "next/link";
 
 export default function Home({ poems, fiction, articles }) {
     return (
-        <Container maxWidth="xl" sx={{ paddingTop: "8rem" }}>
+        <Container maxWidth="xl" sx={{ paddingTop: "6rem" }}>
             <Meta />
             <Grid container>
+                <Grid item xs={12}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginBottom: "2rem",
+                        }}
+                    >
+                        <Typography variant="body2">
+                            <span style={{ textDecoration: "underline" }}>
+                                <Link href="/subscribe">Subscribe</Link>
+                            </span>{" "}
+                            to our mailing list!
+                        </Typography>
+                    </Box>
+                </Grid>
                 <Grid item xs={12} md={2.75}>
                     {poems &&
                         poems.map((poem, index) => {

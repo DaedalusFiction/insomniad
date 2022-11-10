@@ -61,11 +61,14 @@ const StoryPreview = ({ story }) => {
                 >
                     <Link href={storyHref}>{story.fields[0].value}</Link>
                 </Typography>
-                <Typography variant="body2" sx={{ margin: ".25rem 0" }}>
+                <Typography
+                    variant="body2"
+                    sx={{ margin: ".25rem 0", fontSize: "1rem" }}
+                >
                     {story.fields[2].value}
                 </Typography>
-                <Typography className="link" variant="h6">
-                    <Link href={authorHref}>{story.fields[1].value}</Link>
+                <Typography className="link" variant="h6" component="p">
+                    By <Link href={authorHref}>{story.fields[1].value}</Link>
                 </Typography>
             </Box>
             <Divider variant="inset" sx={{ margin: "1rem 0 1.5rem 0" }} />

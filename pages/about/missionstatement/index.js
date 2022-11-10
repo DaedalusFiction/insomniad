@@ -16,7 +16,15 @@ const index = () => {
                         </Typography>
                         <br />
                         <Typography sx={{ whiteSpace: "pre-wrap" }}>
-                            {studioContent.content}
+                            The Rumen is committed to publishing high-quality
+                            poetry, fiction, creative nonfiction, and art by all
+                            peoples, especially individuals from historically
+                            underrepresented demographics. We believe that art
+                            is a vehicle for inter- and intrapersonal
+                            connection, and we are especially interested in work
+                            that effectively describes what it means to be
+                            human, in an intellectual, emotional, bodily, and/or
+                            communal way.
                         </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>

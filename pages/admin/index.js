@@ -30,17 +30,19 @@ const Admin = () => {
         <PageLayout name="Admin">
             <Container maxWidth="xl">
                 <Box sx={{ padding: "4rem 0" }}>
-                    {!isLoggedIn && (
-                        <Button
-                            variant="contained"
-                            color="secondary"
-                            onClick={handleSignIn}
-                            sx={{ marginBottom: "1rem" }}
-                        >
-                            Sign in with google
-                        </Button>
-                    )}
-                    {!isAdmin ? (
+                    <Container maxWidth="sm">
+                        {!isLoggedIn && (
+                            <Button
+                                variant="contained"
+                                color="secondary"
+                                onClick={handleSignIn}
+                                sx={{ marginBottom: "1rem" }}
+                            >
+                                Sign in with google
+                            </Button>
+                        )}
+                    </Container>
+                    {isAdmin ? (
                         <Box sx={{ marginBottom: "3rem" }}>
                             <Grid container spacing={8}>
                                 <Grid item xs={12} md={6}>
@@ -79,11 +81,13 @@ const Admin = () => {
                             </Grid>
                         </Box>
                     ) : (
-                        <Typography>
-                            You are not logged in as an administrator. Please
-                            contact Dave at hello@fictionalweb.com if you
-                            continue to experience difficulties.
-                        </Typography>
+                        <Container maxWidth="sm">
+                            <Typography>
+                                You are not logged in as an administrator.
+                                Please contact Dave at hello@fictionalweb.com if
+                                you continue to experience difficulties.
+                            </Typography>
+                        </Container>
                     )}
                 </Box>
             </Container>

@@ -75,7 +75,7 @@ export default function Home({ poems, fiction, articles }) {
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const poetryQuery = query(
         publicationsRef,

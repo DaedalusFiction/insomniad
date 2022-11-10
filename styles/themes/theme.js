@@ -77,9 +77,9 @@ theme = createTheme(theme, {
         },
         h5: {
             // color: theme.palette.custom.primary,
-            fontFamily: "Raleway",
+            fontFamily: "Playfair Display",
             fontSize: "1.25rem",
-            fontWeight: "400",
+            fontWeight: "600",
             // color: darkTheme.palette.custom.dark,
         },
         h6: {

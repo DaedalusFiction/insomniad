@@ -17,7 +17,7 @@ const SocialMediaIcons = ({ fontSize, color }) => {
                     </IconButton>
                 </Tooltip>
             </Link>
-            <Link href="https://facebook.com">
+            <Link href="https://www.facebook.com/people/The-Rumen/100087383244583/">
                 <Tooltip title="facebook">
                     <IconButton aria-label="facebook">
                         <FacebookIcon

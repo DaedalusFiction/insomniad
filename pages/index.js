@@ -16,6 +16,7 @@ import ArticlePreview from "../components/home/ArticlePreview";
 import { db } from "../firebase";
 import Meta from "../components/home/Meta";
 import Link from "next/link";
+import SocialMediaIcons from "../components/general/SocialMediaIcons";
 
 export default function Home({ poems, fiction, articles }) {
     return (
@@ -73,7 +74,40 @@ export default function Home({ poems, fiction, articles }) {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={2.75}>
-                    <Typography variant="h5">Articles</Typography>
+                    <Typography variant="h5">About Us</Typography>
+                    <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
+                    <Typography variant="body2" sx={{ fontSize: "1rem" }}>
+                        <span style={{ fontWeight: "700" }}>The Rumen</span> is
+                        a collaboration between writers, poets, and artists from
+                        a variety of demographics and backgrounds. Like the guts
+                        of an ungulate, we want{" "}
+                        <span style={{ fontWeight: "700" }}>The Rumen</span> to
+                        be a space for ideas and experiences to digest, ferment,
+                        and transform.
+                    </Typography>
+                    <Typography
+                        variant="body2"
+                        sx={{ fontSize: "1rem", margin: ".5rem 0" }}
+                    >
+                        We are especially interested in publishing contributors
+                        from historically underrepresented people groups.
+                    </Typography>
+                    <Typography
+                        variant="body2"
+                        sx={{ fontSize: "1rem", fontWeight: "600" }}
+                    >
+                        <span style={{ textDecoration: "underline" }}>
+                            <Link href="/about">Learn more</Link>
+                        </span>
+                    </Typography>
+                    <Typography variant="h5" sx={{ marginTop: "2.75rem" }}>
+                        Social Media
+                    </Typography>
+                    <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
+                    <SocialMediaIcons color="primary" />
+                    <Typography variant="h5" sx={{ marginTop: "2.75rem" }}>
+                        Articles
+                    </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {articles &&
                         articles.map((article, index) => {

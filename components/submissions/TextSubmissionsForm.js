@@ -187,7 +187,6 @@ const TextSubmissionsForm = ({ config, folder }) => {
                     <TextField
                         InputLabelProps={{ shrink: true }}
                         type={field.type}
-                        color="secondary"
                         label={field.name}
                         key={index}
                         multiline={field.multiline}
@@ -205,7 +204,7 @@ const TextSubmissionsForm = ({ config, folder }) => {
                     handleClick={handleUpload}
                     isDisabled={isUploading}
                     buttonText="Upload"
-                    dialogText="Are you sure you want to submit this story??"
+                    dialogText="Are you sure you want to submit?"
                     notificationText="File Uploading..."
                 />
             </Box>

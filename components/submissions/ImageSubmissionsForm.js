@@ -242,7 +242,7 @@ const FirebaseUploadForm = ({ config, folder }) => {
                     handleClick={handleUpload}
                     isDisabled={isUploading}
                     buttonText="Upload"
-                    dialogText="Are you sure you want to upload this item?"
+                    dialogText="Are you sure you want to submit this item?"
                     notificationText="File Uploading..."
                 />
             </Box>

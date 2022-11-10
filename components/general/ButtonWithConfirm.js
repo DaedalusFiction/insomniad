@@ -52,17 +52,16 @@ export default function ButtonWithConfirm({
             >
                 <DialogTitle id="delete-photo">{dialogText}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="confirm-action-description">
-                        This action cannot be undone
-                    </DialogContentText>
+                    {/* <DialogContentText
+                        color="primary"
+                        id="confirm-action-description"
+                    >
+                        It&rsquo;s okay if you aren&rsquo;t!
+                    </DialogContentText> */}
                 </DialogContent>
                 <DialogActions>
-                    <Button color="secondary" onClick={handleNo}>
-                        No
-                    </Button>
-                    <Button color="secondary" onClick={handleYes}>
-                        Yes
-                    </Button>
+                    <Button onClick={handleNo}>No</Button>
+                    <Button onClick={handleYes}>Yes</Button>
                 </DialogActions>
             </Dialog>
             <Notification

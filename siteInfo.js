@@ -443,7 +443,7 @@ const secondaryProfiles = [
     },
     {
         image: {
-            url: "/images/placeholder.webp",
+            url: "/images/chandler.webp",
             alt: "Editor Chandler McGraw",
         },
         name: "Chandler McGraw",

@@ -74,7 +74,22 @@ const index = () => {
                     </Grid>
                     <Grid item key={index} xs={12} md={4}>
                         <Profile profile={secondaryProfiles[2]}>
-                            <Typography>Bio to come</Typography>
+                            <Typography>
+                                Chandler McGraw is an artist, photographer,
+                                critic, and museum professional based out of
+                                Roanoke, VA. He graduated from George Mason
+                                University in 2020, having studied studio art
+                                and sculpture. As a sculptor and mixed-media
+                                artist he is experienced with copper and steel,
+                                among other mediums. His experimental style
+                                draws influence from the works of Lee Bontecou,
+                                Louise Nevelson, and John Baldasari. Outside his
+                                artistic efforts, Chandler is still seeking the
+                                Alf calendar with Melmackian anniversary gifts.
+                                He loves when tiny things are contained inside a
+                                larger version of themselves and frequently
+                                enjoys Twizzlers.
+                            </Typography>
                         </Profile>
                     </Grid>
                 </Grid>

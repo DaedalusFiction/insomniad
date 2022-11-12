@@ -562,8 +562,10 @@ const contributorConfig = {
 const textSubmissionsConfig = {
     fields: [
         { name: "Name", type: "text", value: "" },
+        { name: "Email", type: "text", value: "" },
         { name: "Genre", type: "text", value: "" },
         { name: "Previously Published", type: "text", value: "" },
+
         {
             name: "Comment",
             type: "text",
@@ -577,6 +579,7 @@ const textSubmissionsConfig = {
 const imageSubmissionsConfig = {
     fields: [
         { name: "Name", type: "text", value: "" },
+        { name: "Email", type: "text", value: "" },
         { name: "Genre", type: "text", value: "" },
         { name: "Previously Published", type: "text", value: "" },
         {

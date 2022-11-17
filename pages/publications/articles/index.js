@@ -22,7 +22,7 @@ const index = ({ fiction }) => {
     );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const fictionQuery = query(
         publicationsRef,

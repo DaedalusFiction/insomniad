@@ -126,7 +126,7 @@ export default function Home({ poems, fiction, articles }) {
     );
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const poetryQuery = query(
         publicationsRef,
@@ -139,14 +139,14 @@ export const getServerSideProps = async (context) => {
         where("categories", "array-contains", "fiction"),
 
         orderBy("dateUploaded", "desc"),
-        limit(3)
+        limit(2)
     );
     const articlesQuery = query(
         publicationsRef,
         where("categories", "array-contains", "article"),
 
         orderBy("dateUploaded", "desc"),
-        limit(7)
+        limit(4)
     );
 
     const poetrySnapshot = await getDocs(poetryQuery);

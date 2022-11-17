@@ -22,7 +22,7 @@ const index = ({ poems }) => {
     );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     const publicationsRef = collection(db, "publications");
     const poetryQuery = query(
         publicationsRef,

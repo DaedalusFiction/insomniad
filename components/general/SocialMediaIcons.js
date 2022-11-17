@@ -27,7 +27,7 @@ const SocialMediaIcons = ({ fontSize, color }) => {
                     </IconButton>
                 </Tooltip>
             </Link>
-            <Link href="https://twitter.com">
+            <Link href="https://twitter.com/KithisThe">
                 <Tooltip title="twitter">
                     <IconButton aria-label="twitter">
                         <TwitterIcon

@@ -17,26 +17,33 @@ const index = ({ contributors }) => {
                             <Grid key={letter} item xs={6} md={4}>
                                 <Typography variant="h2">{letter}</Typography>
                                 <Divider />
-                                {contributors.map((contributor, index) => {
-                                    return (
-                                        <Box key={index}>
-                                            {contributor.name.split("")[0] ===
-                                                letter && (
-                                                <Typography
-                                                    className="link"
-                                                    variant="h6"
-                                                    sx={{ margin: ".5em 0" }}
-                                                >
-                                                    <Link
-                                                        href={`/contributors/${contributor.name}`}
-                                                    >
-                                                        {contributor.name}
-                                                    </Link>
-                                                </Typography>
-                                            )}
-                                        </Box>
-                                    );
-                                })}
+                                {contributors &&
+                                    contributors.map((contributor, index) => {
+                                        return (
+                                            <Box key={index}>
+                                                {contributor.name &&
+                                                    contributor.name.split(
+                                                        ""
+                                                    )[0] === letter && (
+                                                        <Typography
+                                                            className="link"
+                                                            variant="h6"
+                                                            sx={{
+                                                                margin: ".5em 0",
+                                                            }}
+                                                        >
+                                                            <Link
+                                                                href={`/contributors/${contributor.name}`}
+                                                            >
+                                                                {
+                                                                    contributor.name
+                                                                }
+                                                            </Link>
+                                                        </Typography>
+                                                    )}
+                                            </Box>
+                                        );
+                                    })}
                             </Grid>
                         );
                     })}

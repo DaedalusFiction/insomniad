@@ -369,7 +369,7 @@ const galleryConfig = {
             multiline: true,
             rows: 4,
         },
-        { name: "Published", type: "number", value: "" },
+        { name: "Published", type: "text", value: "" },
         { name: "Artist", type: "text", value: "" },
     ],
 };

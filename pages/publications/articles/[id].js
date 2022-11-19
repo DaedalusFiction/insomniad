@@ -75,7 +75,7 @@ const page = ({ articles, story }) => {
                         </Link>
                     </Typography>
                     <PublicationBody
-                        sidebarCategory="fiction"
+                        sidebarCategory="articles"
                         sidebarItems={articles}
                         story={story}
                     />

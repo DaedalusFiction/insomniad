@@ -368,6 +368,11 @@ const galleryCategories = [
                 href: "/publications/articles/letters",
                 image: { url: "/images/placeholder.webp", alt: "alt text" },
             },
+            {
+                name: "memoir",
+                href: "/publications/articles/letters",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
         ],
     },
 ];

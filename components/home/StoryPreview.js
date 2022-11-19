@@ -34,7 +34,7 @@ const StoryPreview = ({ story, category }) => {
                                     naturalHeight,
                                 }) => handleLoaded(naturalWidth, naturalHeight)}
                                 layout="responsive"
-                                alt={story.description}
+                                alt={story.fields[2].value}
                             />
                         </div>
                     </Fade>

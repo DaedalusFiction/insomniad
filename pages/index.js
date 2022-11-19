@@ -103,7 +103,7 @@ export default function Home({ poems, fiction, articles }) {
                         sx={{ fontSize: "1rem", fontWeight: "600" }}
                     >
                         <span style={{ textDecoration: "underline" }}>
-                            <Link href="/about">Learn more</Link>
+                            <Link href="/about">About Us</Link>
                         </span>
                     </Typography>
                     <Typography variant="h5" sx={{ marginTop: "2.75rem" }}>

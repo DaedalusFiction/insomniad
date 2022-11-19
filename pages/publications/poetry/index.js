@@ -13,7 +13,7 @@ const index = ({ poems }) => {
                 {poems.map((poem, index) => {
                     return (
                         <Grid key={index} item xs={12} sm={6} md={3}>
-                            <StoryPreview story={poem} />
+                            <StoryPreview story={poem} category="poetry" />
                         </Grid>
                     );
                 })}

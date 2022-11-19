@@ -330,7 +330,23 @@ const galleryCategories = [
         name: "poetry",
         href: "/publications/poetry",
         image: { url: "/images/placeholder.webp", alt: "alt text" },
-        subCategories: [],
+        subCategories: [
+            {
+                name: "free verse",
+                href: "/publications/subcategories/free verse",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+            {
+                name: "formalist",
+                href: "/publications/subcategories/formalist",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+            {
+                name: "prose poetry",
+                href: "/publications/subcategories/prose poetry",
+                image: { url: "/images/placeholder.webp", alt: "alt text" },
+            },
+        ],
     },
     {
         name: "article",

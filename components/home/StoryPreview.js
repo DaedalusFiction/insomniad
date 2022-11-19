@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const StoryPreview = ({ story }) => {
+const StoryPreview = ({ story, category }) => {
     const [ratio, setRatio] = useState(1 / 1); // default to 16:9
     const [isLoaded, setIsLoaded] = useState(false);
     const handleLoaded = (naturalWidth, naturalHeight) => {
@@ -11,7 +11,7 @@ const StoryPreview = ({ story }) => {
         setIsLoaded(true);
     };
 
-    const storyHref = "/publications/fiction/" + story.fields[0].value;
+    const storyHref = "/publications/" + category + "/" + story.fields[0].value;
     const authorHref = "/contributors/" + story.fields[1].value;
 
     return (

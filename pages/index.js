@@ -59,7 +59,13 @@ export default function Home({ poems, fiction, articles }) {
                 <Grid item xs={12} md={6}>
                     {fiction &&
                         fiction.map((story, index) => {
-                            return <StoryPreview story={story} key={index} />;
+                            return (
+                                <StoryPreview
+                                    story={story}
+                                    key={index}
+                                    category="poetry"
+                                />
+                            );
                         })}
                 </Grid>
                 <Grid item xs={12} md={0.25}>
@@ -128,18 +134,18 @@ export default function Home({ poems, fiction, articles }) {
 
 export const getStaticProps = async (context) => {
     const publicationsRef = collection(db, "publications");
-    const poetryQuery = query(
+    const fictionQuery = query(
         publicationsRef,
         where("categories", "array-contains", "poetry"),
         orderBy("dateUploaded", "desc"),
-        limit(5)
+        limit(3)
     );
-    const fictionQuery = query(
+    const poetryQuery = query(
         publicationsRef,
         where("categories", "array-contains", "fiction"),
 
         orderBy("dateUploaded", "desc"),
-        limit(2)
+        limit(6)
     );
     const articlesQuery = query(
         publicationsRef,

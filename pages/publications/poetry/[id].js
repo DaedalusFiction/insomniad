@@ -16,6 +16,7 @@ import NativeImage from "../../../components/general/NativeImage";
 import { db } from "../../../firebase";
 import { Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
+import Link from "next/link";
 
 const page = ({ articles, poem }) => {
     return (
@@ -60,10 +61,18 @@ const page = ({ articles, poem }) => {
                     </Typography>
                     <Typography sx={{ textAlign: "center" }}>by</Typography>
                     <Typography
-                        sx={{ textAlign: "center", margin: ".5em 0" }}
+                        sx={{
+                            textAlign: "center",
+                            margin: ".5em 0",
+                            "&:hover": {
+                                textDecoration: "underline",
+                            },
+                        }}
                         variant="h4"
                     >
-                        {poem.fields[1].value}
+                        <Link href={`/contributors/${poem.fields[1].value}`}>
+                            {poem.fields[1].value}
+                        </Link>
                     </Typography>
                     <PublicationBody
                         sidebarCategory="poetry"

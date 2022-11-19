@@ -13,7 +13,7 @@ const index = ({ fiction }) => {
                 {fiction.map((story, index) => {
                     return (
                         <Grid key={index} item xs={12} sm={6} md={3}>
-                            <StoryPreview story={story} />
+                            <StoryPreview story={story} category="articles" />
                         </Grid>
                     );
                 })}

@@ -50,10 +50,7 @@ const SidebarInfo = () => {
             </Typography>
             <Box
                 sx={{
-                    display: {
-                        xs: "none",
-                        md: "flex",
-                    },
+                    display: "flex",
                     flexDirection: "column",
                 }}
             >
@@ -218,7 +215,6 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                                     />
                                 );
                             })}
-                        <SidebarInfo />
                     </Box>
                 </Grid>
                 <Grid
@@ -228,9 +224,9 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                     sx={{
                         display: {
                             xs: "flex",
-                            flexDirection: "column",
                             md: "none",
                         },
+                        flexDirection: "column",
                     }}
                 >
                     {allPublications &&

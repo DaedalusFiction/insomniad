@@ -98,7 +98,7 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                     }}
                 >
                     <Typography variant="h5" sx={{ textAlign: "center" }}>
-                        Poetry
+                        Prose
                     </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {poems &&
@@ -142,7 +142,7 @@ export default function Home({ allPublications, poems, fiction, articles }) {
                     }}
                 >
                     <Typography variant="h5" sx={{ textAlign: "center" }}>
-                        Prose
+                        Poetry
                     </Typography>
                     <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
                     {fiction &&

@@ -18,16 +18,15 @@ import { Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
 import Link from "next/link";
 
-const page = ({ articles, story }) => {
+const Page = ({ articles, story }) => {
+    const image = { url: story.URLs[0], alt: "story" };
     return (
         <Box>
             <Container maxWidth="xl" disableGutters>
                 <Box>
                     <NativeImage
                         maxSize={3000}
-                        url={story.URLs[0]}
-                        alt="Roses"
-                        blur={story.URLs[0]}
+                        image={{ url: story.URLs[0], alt: "story" }}
                     />
                 </Box>
             </Container>
@@ -112,4 +111,4 @@ export const getServerSideProps = async (context) => {
     };
 };
 
-export default page;
+export default Page;

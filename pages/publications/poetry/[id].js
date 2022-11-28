@@ -25,9 +25,7 @@ const page = ({ articles, poem }) => {
                 <Box>
                     <NativeImage
                         maxSize={3000}
-                        url={poem.URLs[0]}
-                        alt="Roses"
-                        blur={poem.URLs[0]}
+                        image={{ url: poem.URLs[0], alt: "poem" }}
                     />
                 </Box>
             </Container>

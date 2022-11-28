@@ -13,7 +13,7 @@ const SizedImage = ({ image, height, width }) => {
         >
             <Image
                 src={image.url}
-                // unoptimized
+                unoptimized
                 layout="fill"
                 objectFit="cover"
                 alt={image.alt}

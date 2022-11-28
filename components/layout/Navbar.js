@@ -1,6 +1,5 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
@@ -13,9 +12,7 @@ import theme from "../../styles/themes/theme";
 import { useEffect, useState } from "react";
 import { navigateToTop } from "../../utility/navigateToTop";
 import { pages, siteName, navbar } from "../../siteInfo";
-import SocialMediaIcons from "../general/SocialMediaIcons";
 import { useRouter } from "next/router";
-import NativeImage from "../../components/general/NativeImage";
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);

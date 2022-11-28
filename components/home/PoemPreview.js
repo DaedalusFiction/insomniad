@@ -21,8 +21,6 @@ const PoemPreview = ({ poem }) => {
                         <Image
                             className="link link-image"
                             src={poem.URLs[0]}
-                            blurDataURL={poem}
-                            placeholder="blur"
                             //has to be unoptimized to work with firebase storage, apparently
                             unoptimized
                             width="100"

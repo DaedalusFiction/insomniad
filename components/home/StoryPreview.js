@@ -23,8 +23,6 @@ const StoryPreview = ({ story, category }) => {
                             <Image
                                 className="link link-image"
                                 src={story.URLs[0]}
-                                blurDataURL={story}
-                                placeholder="blur"
                                 //has to be unoptimized to work with firebase storage, apparently
                                 unoptimized
                                 width="100"

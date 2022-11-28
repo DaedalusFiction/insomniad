@@ -8,7 +8,6 @@ import Navbar from "./Navbar";
 const Layout = ({ children }) => {
     return (
         <Box sx={{ position: "relative" }}>
-            <Meta />
             <Navbar />
             {children}
             <Footer />

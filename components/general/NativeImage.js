@@ -7,7 +7,7 @@ const NativeImage = ({ image, maxSize }) => {
     return (
         <Image
             src={image.url}
-            //has to be unoptimized to work with firebase storage, apparently
+            //has to be unoptimized to work with firebase storage, apparently.
             unoptimized
             width={maxSize}
             height={maxSize / ratio}

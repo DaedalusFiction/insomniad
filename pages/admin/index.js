@@ -46,6 +46,16 @@ const Admin = () => {
                     {isAdmin ? (
                         <Box sx={{ marginBottom: "3rem" }}>
                             <Grid container spacing={8}>
+                                <Grid item xs={12}>
+                                    <Container maxWidth="lg">
+                                        <FirestoreSubmissionsListing
+                                            // category={galleryConfig.category}
+                                            folder="storysubmissions"
+                                            updateCounter={updateCounter}
+                                            setUpdateCounter={setUpdateCounter}
+                                        />
+                                    </Container>
+                                </Grid>
                                 <Grid item xs={12} md={6}>
                                     <FirebaseUploadForm
                                         config={galleryConfig}
@@ -61,16 +71,6 @@ const Admin = () => {
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
                                     />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Container maxWidth="lg">
-                                        <FirestoreSubmissionsListing
-                                            // category={galleryConfig.category}
-                                            folder="storysubmissions"
-                                            updateCounter={updateCounter}
-                                            setUpdateCounter={setUpdateCounter}
-                                        />
-                                    </Container>
                                 </Grid>
                             </Grid>
                         </Box>

@@ -16,17 +16,40 @@ const FirestoreSubmissionsListing = ({
                 Manage Story and Poetry Submissions
             </Typography>
             <br />
+            <Typography variant="h4" sx={{ textAlign: "center" }}>
+                Unread
+            </Typography>
             {submissions &&
                 submissions.map((submission, index) => {
-                    return (
-                        <FirestoreSubmission
-                            folder={folder}
-                            updateCounter={updateCounter}
-                            setUpdateCounter={setUpdateCounter}
-                            submission={submission}
-                            key={index}
-                        />
-                    );
+                    if (!submission.data().isRead) {
+                        return (
+                            <FirestoreSubmission
+                                folder={folder}
+                                updateCounter={updateCounter}
+                                setUpdateCounter={setUpdateCounter}
+                                submission={submission}
+                                key={index}
+                            />
+                        );
+                    }
+                })}
+            <br />
+            <Typography variant="h4" sx={{ textAlign: "center" }}>
+                Read
+            </Typography>
+            {submissions &&
+                submissions.map((submission, index) => {
+                    if (submission.data().isRead) {
+                        return (
+                            <FirestoreSubmission
+                                folder={folder}
+                                updateCounter={updateCounter}
+                                setUpdateCounter={setUpdateCounter}
+                                submission={submission}
+                                key={index}
+                            />
+                        );
+                    }
                 })}
         </Box>
     );

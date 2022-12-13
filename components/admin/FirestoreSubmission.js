@@ -1,6 +1,6 @@
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
 import { Box, Button, Divider, IconButton, Typography } from "@mui/material";
-import { deleteDoc, doc } from "firebase/firestore";
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -21,12 +21,8 @@ const FirestoreSubmission = ({
         setExpanded(!expanded);
     };
 
-    const handleDelete = async () => {
-        let url = submission.data().textFileURL;
-
-        await deleteObject(ref(storage, url));
-
-        await deleteDoc(doc(db, folder, submission.id));
+    const handleMarkAsRead = async () => {
+        await updateDoc(doc(db, folder, submission.id), { isRead: true });
         setUpdateCounter(updateCounter + 1);
     };
     return (
@@ -93,10 +89,10 @@ const FirestoreSubmission = ({
                         );
                     })}
                     <ButtonWithConfirm
-                        buttonText="Delete"
-                        dialogText="Delete this item?"
-                        notificationText="Deleting..."
-                        handleClick={handleDelete}
+                        buttonText="Mark as Read"
+                        dialogText="Mark as read??"
+                        notificationText="Updating..."
+                        handleClick={handleMarkAsRead}
                         isDisabled={isDisabled}
                     />
                 </Box>

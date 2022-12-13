@@ -594,6 +594,13 @@ const textSubmissionsConfig = {
             multiline: true,
             rows: 4,
         },
+        {
+            name: "Bio",
+            type: "text",
+            value: "",
+            multiline: true,
+            rows: 4,
+        },
     ],
     timeUploaded: new Date(),
 };
@@ -605,6 +612,13 @@ const imageSubmissionsConfig = {
         { name: "Previously Published", type: "text", value: "" },
         {
             name: "Comment",
+            type: "text",
+            value: "",
+            multiline: true,
+            rows: 4,
+        },
+        {
+            name: "Bio",
             type: "text",
             value: "",
             multiline: true,

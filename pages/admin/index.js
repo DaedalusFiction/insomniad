@@ -10,6 +10,7 @@ import FirestoreListing from "../../components/admin/FirestoreListing.js";
 import { galleryConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
+import FirestoreImageSubmissionsListing from "../../components/admin/FirestoreImageSubmissionsListing.js";
 
 const Admin = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -43,7 +44,7 @@ const Admin = () => {
                             </Button>
                         )}
                     </Container>
-                    {isAdmin ? (
+                    {!isAdmin ? (
                         <Box sx={{ marginBottom: "3rem" }}>
                             <Grid container spacing={8}>
                                 <Grid item xs={12}>
@@ -51,6 +52,16 @@ const Admin = () => {
                                         <FirestoreSubmissionsListing
                                             // category={galleryConfig.category}
                                             folder="storysubmissions"
+                                            updateCounter={updateCounter}
+                                            setUpdateCounter={setUpdateCounter}
+                                        />
+                                    </Container>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Container maxWidth="lg">
+                                        <FirestoreImageSubmissionsListing
+                                            // category={galleryConfig.category}
+                                            folder="imagesubmissions"
                                             updateCounter={updateCounter}
                                             setUpdateCounter={setUpdateCounter}
                                         />

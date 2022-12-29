@@ -264,7 +264,7 @@ export const getStaticProps = async (context) => {
         where("categories", "array-contains", "fiction"),
 
         orderBy("dateUploaded", "desc"),
-        limit(6)
+        limit(5)
     );
     const articlesQuery = query(
         publicationsRef,

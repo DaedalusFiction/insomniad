@@ -18,12 +18,42 @@ const contactInfo = [
 const Footer = () => {
     return (
         <Container maxWidth="xl">
-            <Grid container sx={{ padding: "1rem 0" }}>
-                <Grid item xs={6}>
+            <Grid container spacing={2} sx={{ padding: "1rem 0" }}>
+                <Grid item xs={4} sx={{ display: { xs: "none", md: "flex" } }}>
                     <SocialMediaIcons color="primary" fontSize="25px" />
                 </Grid>
-                <Grid item xs={6}>
-                    <Box sx={{ display: "flex", justifyContent: "end" }}>
+                <Grid item xs={12} md={4}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            gap: ".25em",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Typography sx={{ textAlign: "center" }}>
+                            Website made by{" "}
+                        </Typography>
+
+                        <Typography
+                            sx={{ "&:hover": { textDecoration: "underline" } }}
+                        >
+                            <a
+                                href="https://www.fictionalweb.com"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Fictional Web
+                            </a>
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: { xs: "center", md: "end" },
+                        }}
+                    >
                         <Link href="/contact">
                             <Button variant="outlined">contact</Button>
                         </Link>

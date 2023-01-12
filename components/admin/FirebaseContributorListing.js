@@ -2,11 +2,10 @@ import { Box, Input, Typography } from "@mui/material";
 import React, { useState } from "react";
 import useGetImages from "../../hooks/useGetImages";
 import theme from "../../styles/themes/theme";
-import FirestoreListingItem from "./FirestoreListingItem";
+import FirestoreContributorListingItem from "./FirestoreContributorListingItem";
 
-const FirestoreListing = ({
+const FirebaseContributorListing = ({
     folder,
-    config,
     updateCounter,
     setUpdateCounter,
 }) => {
@@ -14,12 +13,16 @@ const FirestoreListing = ({
     const [shownImages, setShownImages] = useState([]);
 
     const handleSearchChange = (e) => {
+        console.log(images);
         if (e.target.value === "") {
             setShownImages([]);
             return;
         }
         let newShownImages = images.filter((image) =>
-            image.data().id.toLowerCase().includes(e.target.value.toLowerCase())
+            image
+                .data()
+                .name.toLowerCase()
+                .includes(e.target.value.toLowerCase())
         );
         setShownImages(newShownImages);
     };
@@ -37,7 +40,7 @@ const FirestoreListing = ({
                 Update or delete item in {folder}.
             </Typography>
             <Box sx={{ display: "flex", alignItems: "end", gap: ".5em" }}>
-                <Typography>Search by publication title:</Typography>
+                <Typography>Search by contributor name:</Typography>
                 <Input
                     color="secondary"
                     type="text"
@@ -49,7 +52,7 @@ const FirestoreListing = ({
                 shownImages.length > 0 &&
                 shownImages.map((image, index) => {
                     return (
-                        <FirestoreListingItem
+                        <FirestoreContributorListingItem
                             folder={folder}
                             key={index}
                             image={image}
@@ -66,4 +69,4 @@ const FirestoreListing = ({
     );
 };
 
-export default FirestoreListing;
+export default FirebaseContributorListing;

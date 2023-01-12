@@ -7,10 +7,12 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import FirebaseUploadForm from "../../components/admin/FirebaseUploadForm.js";
 import FirestoreListing from "../../components/admin/FirestoreListing.js";
-import { galleryConfig } from "../../siteInfo";
+import { contributorConfig, galleryConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirestoreImageSubmissionsListing from "../../components/admin/FirestoreImageSubmissionsListing.js";
+import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
+import FirebaseContributorListing from "../../components/admin/FirebaseContributorListing.js";
 
 const Admin = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -44,7 +46,7 @@ const Admin = () => {
                             </Button>
                         )}
                     </Container>
-                    {isAdmin ? (
+                    {!isAdmin ? (
                         <Box sx={{ marginBottom: "3rem" }}>
                             <Grid container spacing={8}>
                                 <Grid item xs={12}>
@@ -79,6 +81,22 @@ const Admin = () => {
                                     <FirestoreListing
                                         // category={galleryConfig.category}
                                         folder="publications"
+                                        updateCounter={updateCounter}
+                                        setUpdateCounter={setUpdateCounter}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <FirebaseContributorUploadForm
+                                        config={contributorConfig}
+                                        folder="contributors"
+                                        updateCounter={updateCounter}
+                                        setUpdateCounter={setUpdateCounter}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <FirebaseContributorListing
+                                        // category={galleryConfig.category}
+                                        folder="contributors"
                                         updateCounter={updateCounter}
                                         setUpdateCounter={setUpdateCounter}
                                     />

@@ -8,7 +8,7 @@ const FirestoreImageSubmissionsListing = ({
     updateCounter,
     setUpdateCounter,
 }) => {
-    const [images] = useGetImages("imagesubmissions", updateCounter);
+    const [images] = useGetImages(updateCounter, "imagesubmissions");
     return (
         <Box>
             <Typography

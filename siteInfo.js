@@ -565,12 +565,10 @@ const eventConfig = {
     timeUploaded: new Date(),
 };
 const contributorConfig = {
-    categories: [],
-    subCategories: [],
     fields: [
-        { name: "Name", type: "text", value: "" },
+        { name: "name", type: "text", value: "" },
         {
-            name: "Description",
+            name: "bio",
             type: "text",
             value: "",
             multiline: true,

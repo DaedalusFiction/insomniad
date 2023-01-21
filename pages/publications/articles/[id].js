@@ -10,8 +10,6 @@ import {
     where,
 } from "firebase/firestore";
 import Image from "next/image";
-import React, { useState } from "react";
-import PageLayout from "../../../components/layout/PageLayout";
 import NativeImage from "../../../components/general/NativeImage";
 import { db } from "../../../firebase";
 import { Typography } from "@mui/material";

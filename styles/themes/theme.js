@@ -102,7 +102,7 @@ theme = createTheme(theme, {
         body1: {
             fontFamily: "Raleway",
             fontWeight: "400",
-            fontSize: "1.25rem",
+            fontSize: "1rem",
             // lineHeight: "1.25rem",
             color: theme.palette.custom.dark,
             // fontFamily: darkTheme.typography.darkTheme.main,
@@ -110,7 +110,7 @@ theme = createTheme(theme, {
         body2: {
             fontFamily: "Raleway",
             fontWeight: "400",
-            fontSize: "1.25rem",
+            fontSize: "1rem",
             // lineHeight: "1.5rem",
             color: theme.palette.custom.dark,
             // fontFamily: darkTheme.typography.darkTheme.decorative,

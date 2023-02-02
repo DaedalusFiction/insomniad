@@ -74,5 +74,4 @@ Once, I hid the kitchen knives. Reminisce:
 I got so good at ducking, the bouquet
 
 of bruises failed to bloom; the moon and sun
-
 attend to the debris and brawl, unsung.

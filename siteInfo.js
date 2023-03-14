@@ -583,7 +583,6 @@ const textSubmissionsConfig = {
         { name: "Name", type: "text", value: "" },
         { name: "Email", type: "text", value: "" },
         { name: "Genre", type: "text", value: "" },
-        { name: "Previously Published", type: "text", value: "" },
 
         {
             name: "Comment",
@@ -599,6 +598,7 @@ const textSubmissionsConfig = {
             multiline: true,
             rows: 4,
         },
+        { name: "How did you hear about us?", type: "text", value: "" },
     ],
     timeUploaded: new Date(),
 };

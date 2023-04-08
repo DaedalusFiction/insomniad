@@ -159,6 +159,7 @@ const Navbar = () => {
                                         fontSize: "1.75rem",
                                         fontWeight: 700,
                                         color: theme.palette.custom.light,
+                                        fontFamily: "Playfair Display SC Black",
                                     }}
                                 >
                                     <Link href="/" style={{ color: "inherit" }}>
@@ -198,8 +199,7 @@ const Navbar = () => {
                                                 margin: "0",
                                                 transition: "300ms",
                                                 fontSize: titleFontSize,
-                                                fontFamily: "Birch",
-                                                letterSpacing: ".15em",
+                                                // letterSpacing: ".15em",
                                                 textAlign: "center",
                                                 cursor: "pointer",
                                                 color:
@@ -212,6 +212,8 @@ const Navbar = () => {
                                                     color: theme.palette.custom
                                                         .light,
                                                 },
+                                                fontFamily:
+                                                    "Playfair Display SC Black",
                                             }}
                                         >
                                             {siteName}

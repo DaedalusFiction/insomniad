@@ -583,6 +583,11 @@ const textSubmissionsConfig = {
         { name: "Name", type: "text", value: "" },
         { name: "Email", type: "text", value: "" },
         { name: "Genre", type: "text", value: "" },
+        {
+            name: "Has this work been previously published?",
+            type: "text",
+            value: "",
+        },
 
         {
             name: "Comment",
@@ -606,8 +611,11 @@ const imageSubmissionsConfig = {
     fields: [
         { name: "Name", type: "text", value: "" },
         { name: "Email", type: "text", value: "" },
-        { name: "Genre", type: "text", value: "" },
-        { name: "Previously Published", type: "text", value: "" },
+        {
+            name: "Has this work been previously published?",
+            type: "text",
+            value: "",
+        },
         {
             name: "Comment",
             type: "text",
@@ -622,6 +630,7 @@ const imageSubmissionsConfig = {
             multiline: true,
             rows: 4,
         },
+        { name: "How did you hear about us?", type: "text", value: "" },
     ],
     timeUploaded: new Date(),
 };

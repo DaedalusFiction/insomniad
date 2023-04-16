@@ -90,7 +90,7 @@ const FirestoreSubmission = ({
                     })}
                     <ButtonWithConfirm
                         buttonText="Mark as Read"
-                        dialogText="Mark as read??"
+                        dialogText="Mark as read?"
                         notificationText="Updating..."
                         handleClick={handleMarkAsRead}
                         isDisabled={isDisabled}

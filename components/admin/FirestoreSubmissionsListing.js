@@ -51,6 +51,10 @@ const FirestoreSubmissionsListing = ({
                         );
                     }
                 })}
+            <Typography sx={{ textAlign: "center" }}>
+                If there is a past submission you would like to view, contact
+                Dave at djs41286@gmail.com
+            </Typography>
         </Box>
     );
 };

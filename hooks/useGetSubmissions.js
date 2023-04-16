@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import { collection, query, orderBy, getDocs, limit } from "firebase/firestore";
 import { db } from "../firebase";
 
 function useGetSubmissions(updateCounter, folder) {
@@ -10,7 +10,8 @@ function useGetSubmissions(updateCounter, folder) {
             const q = query(
                 //change this based on Firebase file structure
                 collection(db, folder),
-                orderBy("dateUploaded", "desc")
+                orderBy("dateUploaded", "desc"),
+                limit(30)
             );
 
             const docsSnap = await getDocs(q);

@@ -17,67 +17,23 @@ import { db } from "../../../firebase";
 import { Typography } from "@mui/material";
 import PublicationBody from "../../../components/publications/PublicationBody";
 import Link from "next/link";
+import PublicationHero from "../../../components/publications/PublicationHero";
+import PublicationHeader from "../../../components/publications/publicationHeader";
 
 const page = ({ articles, poem }) => {
     return (
         <Box>
-            <Container maxWidth="xl" disableGutters>
-                <Box>
-                    <NativeImage
-                        maxSize={3000}
-                        image={{ url: poem.URLs[0], alt: "poem" }}
-                    />
-                </Box>
-            </Container>
+            <PublicationHero publication={poem} />
             <Container>
-                <Box sx={{ display: "flex", justifyContent: "end" }}>
-                    <Typography variant="caption">
-                        {poem.fields[4].value}
-                    </Typography>
+                <Box sx={{ display: { xs: "flex", md: "none" } }}>
+                    <PublicationHeader publication={poem} />
                 </Box>
-                <Box sx={{ padding: "3rem 0" }}>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            gap: ".25em",
-                            justifyContent: "center",
-                        }}
-                    >
-                        {poem.subCategories.map((subCategory, index) => {
-                            return (
-                                <Typography key={index} variant="caption">
-                                    [{subCategory}]
-                                </Typography>
-                            );
-                        })}
-                    </Box>
-                    <Typography
-                        sx={{ textAlign: "center", margin: ".25em 0" }}
-                        variant="h1"
-                    >
-                        {poem.fields[0].value}
-                    </Typography>
-                    <Typography sx={{ textAlign: "center" }}>by</Typography>
-                    <Typography
-                        sx={{
-                            textAlign: "center",
-                            margin: ".5em 0",
-                            "&:hover": {
-                                textDecoration: "underline",
-                            },
-                        }}
-                        variant="h4"
-                    >
-                        <Link href={`/contributors/${poem.fields[1].value}`}>
-                            {poem.fields[1].value}
-                        </Link>
-                    </Typography>
-                    <PublicationBody
-                        sidebarCategory="poetry"
-                        sidebarItems={articles}
-                        story={poem}
-                    />
-                </Box>
+
+                <PublicationBody
+                    sidebarCategory="articles"
+                    sidebarItems={articles}
+                    story={poem}
+                />
             </Container>
         </Box>
     );

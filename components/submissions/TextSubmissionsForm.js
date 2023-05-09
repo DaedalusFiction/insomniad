@@ -19,6 +19,7 @@ const TextSubmissionsForm = ({ config, folder }) => {
     const [selectedTextFile, setSelectedTextFile] = useState(null);
     const [previews, setPreviews] = useState([]);
     const [isUploading, setIsUploading] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [fileError, setFileError] = useState("false");
     const fileInputRef = useRef();
     const textFileInputRef = useRef();
@@ -128,86 +129,94 @@ const TextSubmissionsForm = ({ config, folder }) => {
                     setFormData(JSON.parse(JSON.stringify(config)));
                     setIsUploading(false);
                     setFileError("");
+                    setIsSubmitted(true);
                 }
             );
         }
     };
 
     return (
-        <Box
-            component="form"
-            noValidate
-            autoComplete="off"
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-                backgroundColor: theme.palette.background.accent,
-                padding: "1em",
-                borderRadius: "5px",
-            }}
-        >
-            <Typography variant="h3">
-                Submit a story, article, or poem.
+        <Box>
+            <Typography variant="h3" sx={{ marginBottom: "1rem" }}>
+                Submit a story, article, or collection of poems.
             </Typography>
 
-            <Box>
-                <Button
-                    variant="outlined"
-                    onClick={() => {
-                        textFileInputRef.current.children[0].click();
+            {!isSubmitted ? (
+                <Box
+                    component="form"
+                    noValidate
+                    autoComplete="off"
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1rem",
+                        backgroundColor: theme.palette.background.accent,
+                        padding: "1em",
+                        borderRadius: "5px",
                     }}
                 >
-                    select Text File
-                </Button>
-                <Input
-                    variant="contained"
-                    inputProps={{ accept: ".docx,.doc,.pdf" }}
-                    type="file"
-                    sx={{ display: "none" }}
-                    ref={textFileInputRef}
-                    onChange={handleTextFileChange}
-                >
-                    Select Text File
-                </Input>
-                <br />
-                {selectedTextFile ? (
-                    <Typography variant="caption">
-                        {selectedTextFile.name}
-                    </Typography>
-                ) : (
-                    <Typography variant="caption">
-                        .docx, .doc, or .pdf
-                    </Typography>
-                )}
-            </Box>
-
-            {formData.fields.map((field, index) => {
-                return (
-                    <TextField
-                        InputLabelProps={{ shrink: true }}
-                        type={field.type}
-                        label={field.name}
-                        key={index}
-                        multiline={field.multiline}
-                        rows={field.rows}
-                        value={field.value}
-                        onChange={(e) => {
-                            handleFieldChange(e, field, index);
-                        }}
-                    />
-                );
-            })}
-
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <ButtonWithConfirm
-                    handleClick={handleUpload}
-                    isDisabled={isUploading}
-                    buttonText="Upload"
-                    dialogText="Are you sure you want to submit?"
-                    notificationText="File Uploading..."
-                />
-            </Box>
+                    <Box>
+                        <Button
+                            variant="outlined"
+                            onClick={() => {
+                                textFileInputRef.current.children[0].click();
+                            }}
+                        >
+                            select Text File
+                        </Button>
+                        <Input
+                            variant="contained"
+                            inputProps={{ accept: ".docx,.doc,.pdf" }}
+                            type="file"
+                            sx={{ display: "none" }}
+                            ref={textFileInputRef}
+                            onChange={handleTextFileChange}
+                        >
+                            Select Text File
+                        </Input>
+                        <br />
+                        {selectedTextFile ? (
+                            <Typography variant="caption">
+                                {selectedTextFile.name}
+                            </Typography>
+                        ) : (
+                            <Typography variant="caption">
+                                .docx, .doc, or .pdf
+                            </Typography>
+                        )}
+                    </Box>
+                    {formData.fields.map((field, index) => {
+                        return (
+                            <TextField
+                                InputLabelProps={{ shrink: true }}
+                                type={field.type}
+                                label={field.name}
+                                key={index}
+                                multiline={field.multiline}
+                                rows={field.rows}
+                                value={field.value}
+                                onChange={(e) => {
+                                    handleFieldChange(e, field, index);
+                                }}
+                            />
+                        );
+                    })}
+                    <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <ButtonWithConfirm
+                            handleClick={handleUpload}
+                            isDisabled={isUploading}
+                            buttonText="Upload"
+                            dialogText="Are you sure you want to submit?"
+                            notificationText="File Uploading..."
+                        />
+                    </Box>
+                </Box>
+            ) : (
+                <Typography>
+                    Thank you for your submission! we will read it and get back
+                    to you soon!{" "}
+                </Typography>
+            )}
         </Box>
     );
 };

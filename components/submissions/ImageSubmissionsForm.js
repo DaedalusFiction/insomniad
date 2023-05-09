@@ -18,6 +18,7 @@ const FirebaseUploadForm = ({ config, folder }) => {
     const [selectedImages, setSelectedImages] = useState([]);
     const [previews, setPreviews] = useState([]);
     const [isUploading, setIsUploading] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [fileError, setFileError] = useState("false");
     const fileInputRef = useRef();
 
@@ -130,6 +131,7 @@ const FirebaseUploadForm = ({ config, folder }) => {
                             setSelectedImages([]);
                             setIsUploading(false);
                             setFileError("");
+                            setIsSubmitted(true);
                         }
                     );
                 }
@@ -138,114 +140,128 @@ const FirebaseUploadForm = ({ config, folder }) => {
     };
 
     return (
-        <Box
-            component="form"
-            noValidate
-            autoComplete="off"
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-                backgroundColor: theme.palette.background.accent,
-                padding: "1em",
-                borderRadius: "5px",
-            }}
-        >
-            <Typography variant="h3">Submit an image</Typography>
-            <Box>
-                <Button
-                    variant="outlined"
-                    onClick={() => {
-                        fileInputRef.current.children[0].click();
-                        // fileInputRef.current.click();
+        <Box>
+            <Typography variant="h3" sx={{ margin: "1.175em 0 1rem 0" }}>
+                Submit an image
+            </Typography>
+            {!isSubmitted ? (
+                <Box
+                    component="form"
+                    noValidate
+                    autoComplete="off"
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1rem",
+                        backgroundColor: theme.palette.background.accent,
+                        padding: "1em",
+                        borderRadius: "5px",
                     }}
                 >
-                    select Image
-                </Button>
-                <Input
-                    variant="contained"
-                    inputProps={{ accept: "image/jpeg, image/png" }}
-                    type="file"
-                    sx={{ display: "none" }}
-                    ref={fileInputRef}
-                    onChange={handleImagesChange}
-                >
-                    Select Image
-                </Input>
-                <br />
-                {selectedImages.length > 0 ? (
-                    <Typography variant="caption">
-                        {selectedImages[0].name}
-                    </Typography>
-                ) : (
-                    <Typography variant="caption">.jpg, .png</Typography>
-                )}
-            </Box>
-
-            {previews.length > 0 && (
-                <Grid container spacing={1}>
-                    {previews.map((preview, index) => {
+                    <Box>
+                        <Button
+                            variant="outlined"
+                            onClick={() => {
+                                fileInputRef.current.children[0].click();
+                                // fileInputRef.current.click();
+                            }}
+                        >
+                            select Image
+                        </Button>
+                        <Input
+                            variant="contained"
+                            inputProps={{ accept: "image/jpeg, image/png" }}
+                            type="file"
+                            sx={{ display: "none" }}
+                            ref={fileInputRef}
+                            onChange={handleImagesChange}
+                        >
+                            Select Image
+                        </Input>
+                        <br />
+                        {selectedImages.length > 0 ? (
+                            <Typography variant="caption">
+                                {selectedImages[0].name}
+                            </Typography>
+                        ) : (
+                            <Typography variant="caption">
+                                .jpg, .png
+                            </Typography>
+                        )}
+                    </Box>
+                    {previews.length > 0 && (
+                        <Grid container spacing={1}>
+                            {previews.map((preview, index) => {
+                                return (
+                                    <Grid item xs={3} key={index}>
+                                        <Box
+                                            sx={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                gap: ".5rem",
+                                            }}
+                                        >
+                                            <Image
+                                                blurDataURL={preview}
+                                                placeholder="blur"
+                                                src={preview}
+                                                alt="image preview"
+                                                width="100px"
+                                                height="100px"
+                                                layout="responsive"
+                                            />
+                                            <Button
+                                                variant="outlined"
+                                                onClick={() => {
+                                                    handleRemovePreview(
+                                                        preview
+                                                    );
+                                                    handleRemoveSelectedImage(
+                                                        index
+                                                    );
+                                                }}
+                                            >
+                                                Remove
+                                            </Button>
+                                        </Box>
+                                    </Grid>
+                                );
+                            })}
+                        </Grid>
+                    )}
+                    {formData.fields.map((field, index) => {
                         return (
-                            <Grid item xs={3} key={index}>
-                                <Box
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        gap: ".5rem",
-                                    }}
-                                >
-                                    <Image
-                                        blurDataURL={preview}
-                                        placeholder="blur"
-                                        src={preview}
-                                        alt="image preview"
-                                        width="100px"
-                                        height="100px"
-                                        layout="responsive"
-                                    />
-                                    <Button
-                                        variant="outlined"
-                                        onClick={() => {
-                                            handleRemovePreview(preview);
-                                            handleRemoveSelectedImage(index);
-                                        }}
-                                    >
-                                        Remove
-                                    </Button>
-                                </Box>
-                            </Grid>
+                            <TextField
+                                InputLabelProps={{ shrink: true }}
+                                type={field.type}
+                                color="secondary"
+                                label={field.name}
+                                key={index}
+                                multiline={field.multiline}
+                                rows={field.rows}
+                                value={field.value}
+                                onChange={(e) => {
+                                    handleFieldChange(e, field, index);
+                                }}
+                            />
                         );
                     })}
-                </Grid>
+                    <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <ButtonWithConfirm
+                            handleClick={handleUpload}
+                            isDisabled={isUploading}
+                            buttonText="Upload"
+                            dialogText="Are you sure you want to submit this item?"
+                            notificationText="File Uploading..."
+                        />
+                    </Box>
+                </Box>
+            ) : (
+                <Typography>
+                    Thank you for your submission! We will review it and contact
+                    you shortly.
+                </Typography>
             )}
-
-            {formData.fields.map((field, index) => {
-                return (
-                    <TextField
-                        InputLabelProps={{ shrink: true }}
-                        type={field.type}
-                        color="secondary"
-                        label={field.name}
-                        key={index}
-                        multiline={field.multiline}
-                        rows={field.rows}
-                        value={field.value}
-                        onChange={(e) => {
-                            handleFieldChange(e, field, index);
-                        }}
-                    />
-                );
-            })}
-
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <ButtonWithConfirm
-                    handleClick={handleUpload}
-                    isDisabled={isUploading}
-                    buttonText="Upload"
-                    dialogText="Are you sure you want to submit this item?"
-                    notificationText="File Uploading..."
-                />
-            </Box>
         </Box>
     );
 };

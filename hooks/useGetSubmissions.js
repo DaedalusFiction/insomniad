@@ -11,7 +11,7 @@ function useGetSubmissions(updateCounter, folder) {
                 //change this based on Firebase file structure
                 collection(db, folder),
                 orderBy("dateUploaded", "desc"),
-                limit(30)
+                limit(70)
             );
 
             const docsSnap = await getDocs(q);

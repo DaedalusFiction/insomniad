@@ -39,6 +39,8 @@ const MyApp = (props) => {
                                 `,
                     }}
                 />
+                <Script src="https://smtpjs.com/v3/smtp.js" />
+
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>

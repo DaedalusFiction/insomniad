@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { db, storage } from "../../firebase";
 import theme from "../../styles/themes/theme";
 import ButtonWithConfirm from "../general/ButtonWithConfirm";
+import RejectionButton from "./RejectionButton";
 
 const FirestoreSubmission = ({
     updateCounter,
@@ -88,13 +89,20 @@ const FirestoreSubmission = ({
                             </Typography>
                         );
                     })}
-                    <ButtonWithConfirm
-                        buttonText="Mark as Read"
-                        dialogText="Mark as read?"
-                        notificationText="Updating..."
-                        handleClick={handleMarkAsRead}
-                        isDisabled={isDisabled}
-                    />
+                    <Box sx={{ display: "flex", gap: "1rem" }}>
+                        <ButtonWithConfirm
+                            buttonText="Mark as Read"
+                            dialogText="Mark as read?"
+                            notificationText="Updating..."
+                            handleClick={handleMarkAsRead}
+                            isDisabled={isDisabled}
+                        />
+                        <RejectionButton
+                            submission={submission}
+                            updateCounter={updateCounter}
+                            setUpdateCounter={setUpdateCounter}
+                        />
+                    </Box>
                 </Box>
             )}
         </Box>

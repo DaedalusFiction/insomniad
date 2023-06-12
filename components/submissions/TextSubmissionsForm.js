@@ -213,8 +213,8 @@ const TextSubmissionsForm = ({ config, folder }) => {
                 </Box>
             ) : (
                 <Typography>
-                    Thank you for your submission! we will read it and get back
-                    to you soon!{" "}
+                    Thank you for your submission! We will read it and get back
+                    to you soon!
                 </Typography>
             )}
         </Box>

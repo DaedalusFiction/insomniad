@@ -43,7 +43,7 @@ theme = createTheme(theme, {
     typography: {
         h1: {
             // fontFamily: "Raleway",
-            fontFamily: "Playfair Display",
+            fontFamily: "FrankRuhl",
             color: theme.palette.custom.primary,
             // color: theme.palette.primary.off,
             fontWeight: "400",
@@ -53,7 +53,7 @@ theme = createTheme(theme, {
         },
         h2: {
             color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "FrankRuhl",
             fontWeight: "400",
             // color: darkTheme.palette.custom.dark,
             fontSize: "clamp(3rem, 4vw, 10rem)",
@@ -61,23 +61,23 @@ theme = createTheme(theme, {
         },
         h3: {
             color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "FrankRuhl",
             letterSpacing: ".025em",
             fontWeight: "400",
             // color: darkTheme.palette.custom.dark,
         },
         h4: {
             color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "FrankRuhl",
             letterSpacing: ".025em",
             fontSize: "1.5rem",
-            fontWeight: "400",
+            fontWeight: "600",
             marginBottom: ".5em",
             // color: darkTheme.palette.custom.dark,
         },
         h5: {
             // color: theme.palette.custom.primary,
-            fontFamily: "Playfair Display",
+            fontFamily: "FrankRuhl",
             fontSize: "1.25rem",
             fontWeight: "600",
             // color: darkTheme.palette.custom.dark,

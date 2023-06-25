@@ -55,7 +55,10 @@ const StoryPreview = ({ story, category }) => {
                 <Typography
                     className="link"
                     variant="h4"
-                    sx={{ textTransform: "uppercase" }}
+                    sx={{
+                        textTransform: "uppercase",
+                        fontSize: { xs: "1.5rem", md: "2.25rem" },
+                    }}
                 >
                     <Link href={storyHref}>{story.fields[0].value}</Link>
                 </Typography>

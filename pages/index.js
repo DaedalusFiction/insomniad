@@ -54,11 +54,31 @@ const SidebarInfo = () => {
                     flexDirection: "column",
                 }}
             >
-                <Typography variant="h5" sx={{ marginTop: "2.75rem" }}>
+                <Typography variant="h5" sx={{ marginTop: "1.5rem" }}>
                     Social Media
                 </Typography>
                 <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
                 <SocialMediaIcons color="primary" />
+                <Typography variant="h5" sx={{ marginTop: "1.5rem" }}>
+                    Support
+                </Typography>
+                <Divider sx={{ margin: ".5rem 0 .5rem 0" }} />
+                <Typography
+                    variant="body2"
+                    sx={{ fontSize: "1rem", margin: ".25rem 0" }}
+                >
+                    Want to help <strong>The Rumen</strong> grow? Share us on
+                    social media, tell your friends, or{" "}
+                    <span style={{ textDecoration: "underline" }}>
+                        <Link
+                            href="https://buymeacoffee.com/therumen"
+                            target="_BLANK"
+                            rel="noreferrer"
+                        >
+                            buy us a coffee!
+                        </Link>
+                    </span>
+                </Typography>
             </Box>
         </Box>
     );

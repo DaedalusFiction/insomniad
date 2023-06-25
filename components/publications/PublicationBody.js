@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { marked } from "marked";
 import { Box, Grid, StepContext, Typography } from "@mui/material";
 import PreviewsSidebar from "./PreviewsSidebar";
+import Link from "next/link";
 
 const PublicationBody = ({ sidebarItems, story, sidebarCategory }) => {
     useEffect(() => {
@@ -48,6 +49,25 @@ const PublicationBody = ({ sidebarItems, story, sidebarCategory }) => {
                         month: "short",
                         day: "numeric",
                     })}
+                </Typography>
+                <Typography
+                    variant="body2"
+                    sx={{
+                        fontSize: "1rem",
+                        margin: "2rem 0",
+                    }}
+                >
+                    Want to help <strong>The Rumen</strong> grow? Share us on
+                    social media, tell your friends, or{" "}
+                    <span style={{ textDecoration: "underline" }}>
+                        <Link
+                            href="https://buymeacoffee.com/therumen"
+                            target="_BLANK"
+                            rel="noreferrer"
+                        >
+                            buy us a coffee!
+                        </Link>
+                    </span>
                 </Typography>
             </Grid>
             <Grid item xs={12} md={4}>

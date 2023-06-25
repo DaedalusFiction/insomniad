@@ -28,6 +28,10 @@ a {
     cursor: pointer;
 }
 
+.link-coffee {
+    text-decoration: underline;
+}
+
 .link:hover {
     text-decoration: underline;
     text-decoration-thickness: 1.5px;

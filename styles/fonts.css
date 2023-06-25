@@ -14,6 +14,11 @@
     src: url("/fonts/PlayfairDisplaySC-Black.ttf") format("truetype");
     font-weight: 1 999;
 }
+@font-face {
+    font-family: "FrankRuhl";
+    src: url("/fonts/FrankRuhlLibre-VariableFont_wght.ttf") format("truetype");
+    font-weight: 1 999;
+}
 
 .color-test {
     color: #f7d195;

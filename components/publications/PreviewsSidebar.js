@@ -6,7 +6,7 @@ import ArticlePreview from "../home/ArticlePreview";
 const PreviewsSidebar = ({ sidebarItems, sidebarCategory }) => {
     return (
         <Box sx={{ position: "relative" }}>
-            <Typography variant="h5">Suggested {sidebarCategory}</Typography>
+            <Typography variant="h5">Further Reading</Typography>
             <Divider sx={{ margin: ".5rem 0 1rem 0" }} />
             {sidebarItems &&
                 sidebarItems.map((item, index) => {

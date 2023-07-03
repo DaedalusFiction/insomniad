@@ -77,13 +77,7 @@ const index = () => {
                                         Roman, Garamond, or Calibri
                                     </ListItemText>
                                 </ListItem>
-                                <ListItem>
-                                    <ListItemText>
-                                        DO NOT include any personal information
-                                        such as name, email, or other contact
-                                        info on your submitted documents
-                                    </ListItemText>
-                                </ListItem>
+
                                 <ListItem>
                                     <ListItemText>
                                         Submit only original work that has not
@@ -327,7 +321,7 @@ const index = () => {
                             </Typography>
                             <br />
 
-                            <Typography variant="h3">VISUAL ART</Typography>
+                            {/* <Typography variant="h3">VISUAL ART</Typography>
                             <br />
                             <Typography>
                                 The Rumen is seeking visual media that explores
@@ -367,7 +361,7 @@ const index = () => {
                                     </ListItemText>
                                 </ListItem>
                             </List>
-                            <br />
+                            <br /> */}
 
                             <Typography
                                 variant="h5"
@@ -444,19 +438,11 @@ const index = () => {
                         </Box>
                     </Container>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <Container maxWidth="md">
+                <Grid item xs={12}>
+                    <Container>
                         <TextSubmissionsForm
                             config={textSubmissionsConfig}
                             folder="storysubmissions"
-                        />
-                    </Container>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <Container maxWidth="md">
-                        <ImageSubmissionsForm
-                            config={imageSubmissionsConfig}
-                            folder="imagesubmissions"
                         />
                     </Container>
                 </Grid>

@@ -55,6 +55,7 @@ theme = createTheme(theme, {
             color: theme.palette.custom.primary,
             fontFamily: "FrankRuhl",
             fontWeight: "400",
+            lineHeight: "1em",
             // color: darkTheme.palette.custom.dark,
             fontSize: "clamp(3rem, 4vw, 10rem)",
             letterSpacing: ".025em",

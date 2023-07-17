@@ -7,11 +7,8 @@ import {
     Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
-import PageLayout from "../../components/layout/PageLayout";
 import TextSubmissionsForm from "../../components/submissions/TextSubmissionsForm";
-import ImageSubmissionsForm from "../../components/submissions/ImageSubmissionsForm";
-import { imageSubmissionsConfig, textSubmissionsConfig } from "../../siteInfo";
-import theme from "../../styles/themes/theme";
+import { textSubmissionsConfig } from "../../siteInfo";
 import Link from "next/link";
 
 const index = () => {

@@ -1,7 +1,6 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
-import Head from "next/head";
 import login from "../../utility/login.js";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
@@ -10,7 +9,6 @@ import FirestoreListing from "../../components/admin/FirestoreListing.js";
 import { contributorConfig, galleryConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
-import FirestoreImageSubmissionsListing from "../../components/admin/FirestoreImageSubmissionsListing.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
 import FirebaseContributorListing from "../../components/admin/FirebaseContributorListing.js";
 
@@ -59,16 +57,7 @@ const Admin = () => {
                                         />
                                     </Container>
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <Container maxWidth="lg">
-                                        <FirestoreImageSubmissionsListing
-                                            // category={galleryConfig.category}
-                                            folder="imagesubmissions"
-                                            updateCounter={updateCounter}
-                                            setUpdateCounter={setUpdateCounter}
-                                        />
-                                    </Container>
-                                </Grid>
+
                                 <Grid item xs={12} md={6}>
                                     <FirebaseUploadForm
                                         config={galleryConfig}

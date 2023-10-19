@@ -90,6 +90,11 @@ const FirestoreSubmission = ({
                             </Typography>
                         );
                     })}
+                    <Typography component="span">
+                        Subscribed:{" "}
+                        {submission.data().subscribed ? "Yes" : "No"}
+                    </Typography>
+
                     <Box sx={{ display: "flex", gap: "1rem" }}>
                         <ButtonWithConfirm
                             buttonText="Mark as Read"

@@ -1,4 +1,12 @@
-import { Button, Grid, Input, TextField, Typography } from "@mui/material";
+import {
+    Button,
+    Checkbox,
+    FormControlLabel,
+    Grid,
+    Input,
+    TextField,
+    Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -23,6 +31,7 @@ const TextSubmissionsForm = ({ config, folder }) => {
     const [fileError, setFileError] = useState("false");
     const fileInputRef = useRef();
     const textFileInputRef = useRef();
+    const [isSubscribing, setIsSubscribing] = useState(true);
 
     const handleFieldChange = (e, field, index) => {
         const newFieldData = {
@@ -60,7 +69,6 @@ const TextSubmissionsForm = ({ config, folder }) => {
     };
 
     const handleTextFileChange = (e) => {
-        console.log(e.target.files[0].type);
         if (e.target.files[0].size > 1097152) {
             setFileError("File size must be less than 1MB");
             return;
@@ -124,6 +132,7 @@ const TextSubmissionsForm = ({ config, folder }) => {
                         textFileURL: textFileURL,
                         fileName: selectedTextFile.name,
                         dateUploaded: Date.now(),
+                        subscribed: isSubscribing,
                     });
 
                     setFormData(JSON.parse(JSON.stringify(config)));
@@ -212,13 +221,27 @@ const TextSubmissionsForm = ({ config, folder }) => {
                                 </Typography>
                             )}
                         </Box>
+                        <Box>
+                            <FormControlLabel
+                                label="Subscribe to Our Newsletter?"
+                                control={
+                                    <Checkbox
+                                        checked={isSubscribing}
+                                        id="subscribe"
+                                        onChange={(e) => {
+                                            setIsSubscribing(e.target.checked);
+                                        }}
+                                    />
+                                }
+                            />
+                        </Box>
                         <Box sx={{ display: "flex", justifyContent: "center" }}>
                             <ButtonWithConfirm
                                 handleClick={handleUpload}
                                 isDisabled={isUploading}
-                                buttonText="Upload"
+                                buttonText="Submit"
                                 dialogText="Are you sure you want to submit?"
-                                notificationText="File Uploading..."
+                                notificationText="Submitting..."
                             />
                         </Box>
                     </Box>

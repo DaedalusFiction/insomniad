@@ -38,11 +38,11 @@ const Footer = () => {
                             sx={{ "&:hover": { textDecoration: "underline" } }}
                         >
                             <a
-                                href="https://www.fictionalweb.com"
+                                href="https://redbrickinc.com"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Fictional Web
+                                Red Brick Inc.
                             </a>
                         </Typography>
                     </Box>

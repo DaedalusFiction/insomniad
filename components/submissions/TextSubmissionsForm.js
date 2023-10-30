@@ -18,6 +18,7 @@ import { db, storage } from "../../firebase";
 import { galleryCategories } from "../../siteInfo";
 import theme from "../../styles/themes/theme";
 import ButtonWithConfirm from "../general/ButtonWithConfirm";
+import Link from "next/link";
 
 const TextSubmissionsForm = ({ config, folder }) => {
     const [formData, setFormData] = useState(
@@ -223,7 +224,7 @@ const TextSubmissionsForm = ({ config, folder }) => {
                         </Box>
                         <Box>
                             <FormControlLabel
-                                label="Subscribe to Our Newsletter?"
+                                label="Subscribe to our monthly newsletter"
                                 control={
                                     <Checkbox
                                         checked={isSubscribing}
@@ -246,10 +247,29 @@ const TextSubmissionsForm = ({ config, folder }) => {
                         </Box>
                     </Box>
                 ) : (
-                    <Typography>
-                        Thank you for your submission! We will read it and get
-                        back to you soon!
-                    </Typography>
+                    <div>
+                        <Typography>
+                            Thank you for your submission! We will read it and
+                            get back to you soon!
+                        </Typography>
+                        <br />
+                        <Typography
+                            variant="body2"
+                            sx={{ fontSize: "1rem", margin: ".25rem 0" }}
+                        >
+                            Want to help <strong>The Rumen</strong> grow? Share
+                            us on social media, tell your friends, or{" "}
+                            <span style={{ textDecoration: "underline" }}>
+                                <Link
+                                    href="https://buymeacoffee.com/therumen"
+                                    target="_BLANK"
+                                    rel="noreferrer"
+                                >
+                                    buy us a coffee!
+                                </Link>
+                            </span>
+                        </Typography>
+                    </div>
                 )}
             </Grid>
         </Grid>

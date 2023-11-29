@@ -25,7 +25,12 @@ const page = ({ articles, poem }) => {
         <Box>
             <PublicationHero publication={poem} />
             <Container>
-                <Box sx={{ display: { xs: "flex", md: "none" } }}>
+                <Box
+                    sx={{
+                        display: { xs: "flex", md: "none" },
+                        justifyContent: "center",
+                    }}
+                >
                     <PublicationHeader publication={poem} />
                 </Box>
 

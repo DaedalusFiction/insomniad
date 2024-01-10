@@ -40,7 +40,7 @@ const PublicationsIndex = ({ publications, category }) => {
         poetrySnapshot.docs.forEach((doc, index) => {
             poems = [...poems, { data: doc.data(), id: doc.id }];
         });
-        if (poems.length < 20) {
+        if (poems.length < 12) {
             setButtonIsShowing(false);
         }
         setShownPublications([...shownPublications, ...poems]);

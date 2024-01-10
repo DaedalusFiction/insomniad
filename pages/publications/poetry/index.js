@@ -1,39 +1,36 @@
-import { Divider, Grid, Typography } from "@mui/material";
-import { Box, Container } from "@mui/system";
-import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
-import React from "react";
-import StoryPreview from "../../../components/home/StoryPreview";
+import {
+    collection,
+    getDocs,
+    limit,
+    orderBy,
+    query,
+    where,
+} from "firebase/firestore";
 import PageLayout from "../../../components/layout/PageLayout";
 import { db } from "../../../firebase";
+import PublicationsIndex from "../../../components/layout/PublicationsIndex";
 
 const index = ({ poems }) => {
     return (
         <PageLayout name="Poetry">
-            <Grid className="section" container spacing={3}>
-                {poems.map((poem, index) => {
-                    return (
-                        <Grid key={index} item xs={12} sm={6} md={3}>
-                            <StoryPreview story={poem} category="poetry" />
-                        </Grid>
-                    );
-                })}
-            </Grid>
+            <PublicationsIndex publications={poems} category="poetry" />
         </PageLayout>
     );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const publicationsRef = collection(db, "publications");
     const poetryQuery = query(
         publicationsRef,
         where("categories", "array-contains", "poetry"),
-        orderBy("dateUploaded", "desc")
+        orderBy("dateUploaded", "desc"),
+        limit(12)
     );
 
     const poetrySnapshot = await getDocs(poetryQuery);
     let poems = [];
     poetrySnapshot.docs.forEach((doc, index) => {
-        poems = [...poems, doc.data()];
+        poems = [...poems, { data: doc.data(), id: doc.id }];
     });
 
     return {

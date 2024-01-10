@@ -83,92 +83,78 @@ const Navbar = () => {
         >
             <AppBar position="static" onMouseLeave={handleMouseLeave}>
                 <Container sx={{ padding: ".5rem 0" }} maxWidth="xl">
-                    <Grid container>
-                        <Grid item xs={3}>
-                            <Box
-                                sx={{
-                                    display: { xs: "flex", xl: "none" },
-                                }}
-                            >
-                                <IconButton
-                                    size="large"
-                                    aria-label="account of current user"
-                                    aria-controls="menu-appbar"
-                                    aria-haspopup="true"
-                                    onClick={handleOpenNavMenu}
-                                    color="inherit"
-                                >
-                                    <MenuIcon />
-                                </IconButton>
-                                <Menu
-                                    id="menu-appbar"
-                                    anchorEl={anchorElNav}
-                                    anchorOrigin={{
-                                        vertical: "bottom",
-                                        horizontal: "left",
-                                    }}
-                                    keepMounted
-                                    transformOrigin={{
-                                        vertical: "top",
-                                        horizontal: "left",
-                                    }}
-                                    open={Boolean(anchorElNav)}
-                                    onClose={handleCloseNavMenu}
-                                    sx={{
-                                        display: { xs: "block", xl: "none" },
-                                    }}
-                                >
-                                    {pages.map((page, index) => {
-                                        return (
-                                            <MenuItem
-                                                onClick={() => {
-                                                    navigateToTop();
-                                                    handleCloseNavMenu();
-                                                }}
-                                                key={index}
-                                            >
-                                                <Typography textAlign="center">
-                                                    <Link href={page.href}>
-                                                        {page.name}
-                                                    </Link>
-                                                </Typography>
-                                            </MenuItem>
-                                        );
-                                    })}
-                                </Menu>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={9}>
-                            <Box
-                                sx={{
-                                    display: { xs: "flex", md: "none" },
-                                    alignItems: "center",
-                                    justifyContent: "end",
-                                    paddingRight: "1em",
-                                    height: "100%",
-                                    // width: "100%",
-                                }}
-                            >
-                                <Typography
-                                    variant="h3"
-                                    noWrap
-                                    onClick={() => {
-                                        navigateToTop();
-                                    }}
-                                    sx={{
-                                        fontSize: "1.75rem",
-                                        fontWeight: 700,
-                                        color: theme.palette.custom.light,
-                                        fontFamily: "Playfair Display SC Black",
-                                    }}
-                                >
-                                    <Link href="/" style={{ color: "inherit" }}>
-                                        {siteName}
-                                    </Link>
-                                </Typography>
-                            </Box>
-                        </Grid>
-                    </Grid>
+                    <Box
+                        sx={{
+                            display: { xs: "flex", xl: "none" },
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                        }}
+                    >
+                        <Typography
+                            variant="h3"
+                            noWrap
+                            onClick={() => {
+                                navigateToTop();
+                            }}
+                            sx={{
+                                fontSize: "1.75rem",
+                                marginLeft: "1rem",
+                                fontWeight: 700,
+                                color: theme.palette.custom.light,
+                                fontFamily: "Playfair Display SC Black",
+                            }}
+                        >
+                            <Link href="/" style={{ color: "inherit" }}>
+                                The Rumen
+                            </Link>
+                        </Typography>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: "bottom",
+                                horizontal: "left",
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: "top",
+                                horizontal: "left",
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: "block", xl: "none" },
+                            }}
+                        >
+                            {pages.map((page, index) => {
+                                return (
+                                    <MenuItem
+                                        onClick={() => {
+                                            navigateToTop();
+                                            handleCloseNavMenu();
+                                        }}
+                                        key={index}
+                                    >
+                                        <Typography textAlign="center">
+                                            <Link href={page.href}>
+                                                {page.name}
+                                            </Link>
+                                        </Typography>
+                                    </MenuItem>
+                                );
+                            })}
+                        </Menu>
+                    </Box>
 
                     {/* desktop view */}
                     <Box sx={{ display: { xs: "none", xl: "inherit" } }}>

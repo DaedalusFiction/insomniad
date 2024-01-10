@@ -11,6 +11,8 @@ const StoryPreview = ({ story, category }) => {
         setIsLoaded(true);
     };
 
+    // console.log("story: ", story);
+
     const storyHref = "/publications/" + category + "/" + story.fields[0].value;
     const authorHref = "/contributors/" + story.fields[1].value;
 

@@ -266,7 +266,7 @@ export default function Home({ allPublications, poems, fiction, articles }) {
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "publications");
     const allPublicationsQuery = query(
         publicationsRef,

@@ -29,7 +29,7 @@ const PublicationsIndex = ({ publications, category }) => {
         );
         const poetryQuery = query(
             publicationsRef,
-            where("categories", "array-contains", "poetry"),
+            where("categories", "array-contains", category),
             orderBy("dateUploaded", "desc"),
             limit(12),
             startAfter(lastShown)

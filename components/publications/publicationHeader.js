@@ -39,7 +39,7 @@ const PublicationHeader = ({ publication }) => {
                         textAlign: "center",
                         margin: ".25em 0",
                         textTransform: "uppercase",
-                        maxWidth: "15ch",
+                        maxWidth: "12ch",
                     }}
                     variant="h1"
                 >

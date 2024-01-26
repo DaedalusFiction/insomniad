@@ -18,7 +18,6 @@ const PublicationsIndex = ({ publications, category }) => {
     const [shownPublications, setShownPublications] = useState(publications);
     const [buttonIsShowing, setButtonIsShowing] = useState(true);
     const handleLoadMoreDocuments = async () => {
-        console.log(shownPublications[shownPublications.length - 1].id);
         const publicationsRef = collection(db, "publications");
         const lastShown = await getDoc(
             doc(

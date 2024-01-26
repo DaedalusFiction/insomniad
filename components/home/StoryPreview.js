@@ -59,7 +59,7 @@ const StoryPreview = ({ story, category }) => {
                     variant="h4"
                     sx={{
                         textTransform: "uppercase",
-                        fontSize: { xs: "1.5rem", md: "2.25rem" },
+                        fontSize: { xs: "1.5rem", md: "1.75rem" },
                     }}
                 >
                     <Link href={storyHref}>{story.fields[0].value}</Link>

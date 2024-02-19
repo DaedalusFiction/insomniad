@@ -2,7 +2,15 @@ import { Button, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import login from "../../utility/login.js";
-import { doc, getDoc } from "firebase/firestore";
+import {
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    limit,
+    orderBy,
+    query,
+} from "firebase/firestore";
 import { db } from "../../firebase.js";
 import FirebaseUploadForm from "../../components/admin/FirebaseUploadForm.js";
 import FirestoreListing from "../../components/admin/FirestoreListing.js";
@@ -11,8 +19,9 @@ import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
 import FirebaseContributorListing from "../../components/admin/FirebaseContributorListing.js";
+import GenerateNewsletter from "../../components/admin/GenerateNewsletter.js";
 
-const Admin = () => {
+const Admin = ({ publications }) => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [updateCounter, setUpdateCounter] = useState(0);
@@ -83,11 +92,8 @@ const Admin = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
-                                    <FirebaseContributorListing
-                                        // category={galleryConfig.category}
-                                        folder="contributors"
-                                        updateCounter={updateCounter}
-                                        setUpdateCounter={setUpdateCounter}
+                                    <GenerateNewsletter
+                                        publications={publications}
                                     />
                                 </Grid>
                             </Grid>
@@ -105,6 +111,27 @@ const Admin = () => {
             </Container>
         </PageLayout>
     );
+};
+
+export const getServerSideProps = async () => {
+    const publicationsRef = collection(db, "publications");
+    const publicationsQuery = query(
+        publicationsRef,
+        orderBy("dateUploaded", "desc"),
+        limit(4)
+    );
+
+    const publicationsSnapshot = await getDocs(publicationsQuery);
+    let publications = [];
+    publicationsSnapshot.docs.forEach((doc, index) => {
+        publications = [...publications, { data: doc.data(), id: doc.id }];
+    });
+
+    return {
+        props: {
+            publications,
+        },
+    };
 };
 
 export default Admin;

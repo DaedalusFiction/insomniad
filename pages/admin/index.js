@@ -18,7 +18,6 @@ import { contributorConfig, galleryConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
-import FirebaseContributorListing from "../../components/admin/FirebaseContributorListing.js";
 import GenerateNewsletter from "../../components/admin/GenerateNewsletter.js";
 
 const Admin = ({ publications }) => {
@@ -92,9 +91,12 @@ const Admin = ({ publications }) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
-                                    <GenerateNewsletter
-                                        publications={publications}
-                                    />
+                                    {publications &&
+                                        publications.length > 0 && (
+                                            <GenerateNewsletter
+                                                publications={publications}
+                                            />
+                                        )}
                                 </Grid>
                             </Grid>
                         </Box>

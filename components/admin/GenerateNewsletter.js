@@ -1,8 +1,6 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
 
 const GenerateNewsletter = ({ publications }) => {
-    const [text, setText] = useState("hi");
     const newsletterTemplate = `
          <!DOCTYPE html>
 <html>

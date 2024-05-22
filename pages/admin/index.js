@@ -18,9 +18,9 @@ import { contributorConfig, galleryConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
-// import GenerateNewsletter from "../../components/admin/GenerateNewsletter.js";
+import GenerateNewsletter from "../../components/admin/GenerateNewsletter.js";
 
-const Admin = () => {
+const Admin = ({ publications }) => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [updateCounter, setUpdateCounter] = useState(0);
@@ -90,14 +90,14 @@ const Admin = () => {
                                         setUpdateCounter={setUpdateCounter}
                                     />
                                 </Grid>
-                                {/* <Grid item xs={12} md={6}>
+                                <Grid item xs={12} md={6}>
                                     {publications &&
                                         publications.length > 0 && (
                                             <GenerateNewsletter
                                                 publications={publications}
                                             />
                                         )}
-                                </Grid> */}
+                                </Grid>
                             </Grid>
                         </Box>
                     ) : (
@@ -115,25 +115,25 @@ const Admin = () => {
     );
 };
 
-// export const getServerSideProps = async () => {
-//     const publicationsRef = collection(db, "publications");
-//     const publicationsQuery = query(
-//         publicationsRef,
-//         orderBy("dateUploaded", "desc"),
-//         limit(4)
-//     );
+export const getServerSideProps = async () => {
+    const publicationsRef = collection(db, "publications");
+    const publicationsQuery = query(
+        publicationsRef,
+        orderBy("dateUploaded", "desc"),
+        limit(4)
+    );
 
-//     const publicationsSnapshot = await getDocs(publicationsQuery);
-//     let publications = [];
-//     publicationsSnapshot.docs.forEach((doc, index) => {
-//         publications = [...publications, { data: doc.data(), id: doc.id }];
-//     });
+    const publicationsSnapshot = await getDocs(publicationsQuery);
+    let publications = [];
+    publicationsSnapshot.docs.forEach((doc, index) => {
+        publications = [...publications, { data: doc.data(), id: doc.id }];
+    });
 
-//     return {
-//         props: {
-//             publications,
-//         },
-//     };
-// };
+    return {
+        props: {
+            publications,
+        },
+    };
+};
 
 export default Admin;

@@ -231,7 +231,7 @@ const GenerateNewsletter = ({ publications }) => {
                                                 <p class="text-center">
                                                     <a
                                                         href=${
-                                                            "https://www.therumen.com/publications/poetry/" +
+                                                            "https://www.therumen.com/publications/" +
                                                             publications[0].id
                                                                 .split(" ")
                                                                 .join("%20")
@@ -274,7 +274,10 @@ const GenerateNewsletter = ({ publications }) => {
                                                 </div>
                                                 <div class="text-container">
                                                     <div>
-                                                        <h3>Spring Melic</h3>
+                                                        <h3>${
+                                                            publications[1].data
+                                                                .fields[0].value
+                                                        }</h3>
                                                         <p class="author-name">
                                                             by ${
                                                                 publications[1]
@@ -294,7 +297,7 @@ const GenerateNewsletter = ({ publications }) => {
                                                         </p>
                                                         <br />
                                                         <a
-                                                            href="https://www.therumen.com/publications/poetry/${publications[1].id
+                                                            href="https://www.therumen.com/publications/${publications[1].id
                                                                 .split(" ")
                                                                 .join("%20")}"
                                                             target="_blank"
@@ -328,7 +331,7 @@ const GenerateNewsletter = ({ publications }) => {
                                                     </p>
                                                     <br />
                                                     <a
-                                                        href="https://www.therumen.com/publications/poetry/${publications[2].id
+                                                        href="https://www.therumen.com/publications/${publications[2].id
                                                             .split(" ")
                                                             .join("%20")}"
                                                         target="_blank"
@@ -423,7 +426,7 @@ const GenerateNewsletter = ({ publications }) => {
                                                         </p>
                                                         <br />
                                                         <a
-                                                            href="https://www.therumen.com/publications/poetry/${publications[3].id
+                                                            href="https://www.therumen.com/publications/${publications[3].id
                                                                 .split(" ")
                                                                 .join("%20")}"
                                                             target="_blank"

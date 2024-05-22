@@ -77,26 +77,11 @@ const TextSubmissionsForm = ({ config, folder }) => {
         setSelectedTextFile(e.target.files[0]);
     };
 
-    const handleRemovePreview = (preview) => {
-        const newPreviews = previews.filter(
-            (myPreview) => myPreview !== preview
-        );
-        setPreviews(newPreviews);
-    };
-
-    const handleRemoveSelectedImage = (index) => {
-        const newSelectedImages = selectedImages.splice(index, 1);
-        setSelectedImages(newSelectedImages);
-    };
-
     const handleUpload = async () => {
         if (formData.fields[0].value === "") {
             setFileError("Please Enter Your Name");
             return;
         }
-
-        var downloadURLs = [];
-        let error = false;
 
         //check to see if image already exists in storage
 

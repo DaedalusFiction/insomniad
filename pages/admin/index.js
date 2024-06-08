@@ -90,14 +90,14 @@ const Admin = ({ publications }) => {
                                         setUpdateCounter={setUpdateCounter}
                                     />
                                 </Grid>
-                                <Grid item xs={12} md={6}>
+                                {/* <Grid item xs={12} md={6}>
                                     {publications &&
                                         publications.length > 0 && (
                                             <GenerateNewsletter
                                                 publications={publications}
                                             />
                                         )}
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                         </Box>
                     ) : (

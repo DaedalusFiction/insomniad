@@ -18,7 +18,7 @@ import { contributorConfig, galleryConfig } from "../../siteInfo";
 import PageLayout from "../../components/layout/PageLayout.js";
 import FirestoreSubmissionsListing from "../../components/admin/FirestoreSubmissionsListing.js";
 import FirebaseContributorUploadForm from "../../components/admin/FirebaseContributorUploadForm.js";
-import GenerateNewsletter from "../../components/admin/GenerateNewsletter.js";
+// import GenerateNewsletter from "../../components/admin/GenerateNewsletter.js";
 
 const Admin = ({ publications }) => {
     const [isAdmin, setIsAdmin] = useState(false);

@@ -21,7 +21,7 @@ const MyApp = (props) => {
         <CacheProvider value={emotionCache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Script
+                {/* <Script
                     strategy="afterInteractive"
                     src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
                 />
@@ -39,7 +39,7 @@ const MyApp = (props) => {
                                 `,
                     }}
                 />
-                <Script src="https://smtpjs.com/v3/smtp.js" />
+                <Script src="https://smtpjs.com/v3/smtp.js" /> */}
 
                 <Layout>
                     <Component {...pageProps} />

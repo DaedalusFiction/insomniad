@@ -1,6 +1,4 @@
-import { Button } from "@mui/material";
 import { doc, updateDoc } from "firebase/firestore";
-import { ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import ButtonWithConfirm from "../general/ButtonWithConfirm";
